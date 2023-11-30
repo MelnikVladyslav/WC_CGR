@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "XGIWe86tfSrGlby9cwkkRgQ+Cf2WGDROWpLQ5OzVNmhD4oBg40MMx7xNouiMXSyhRQo06IpMCkPUhYYS8hQw6w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\HP elitebook G6 745\\source\\repos\\WC_CGR\\WC_CGR\\WC_CGR.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP elitebook G6 745\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\HP elitebook G6 745\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+  ],
+  "logs": []
+}

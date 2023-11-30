@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using GameLogic.Initilization;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -8,6 +9,9 @@ namespace WC_CGR
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+
+        //Logic game
+        StartInit startInit = new StartInit();
 
         public Game1()
         {
@@ -19,6 +23,7 @@ namespace WC_CGR
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            startInit.Start();
 
             base.Initialize();
         }

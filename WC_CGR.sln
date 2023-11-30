@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC_CGR", "WC_CGR\WC_CGR.csproj", "{D0C5A601-EC32-4A9D-8112-4A7D6E3E6339}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLogic", "GameLogic\GameLogic.csproj", "{008EADA0-85F1-4D69-9689-771BC168714B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D0C5A601-EC32-4A9D-8112-4A7D6E3E6339}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0C5A601-EC32-4A9D-8112-4A7D6E3E6339}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0C5A601-EC32-4A9D-8112-4A7D6E3E6339}.Release|Any CPU.Build.0 = Release|Any CPU
+		{008EADA0-85F1-4D69-9689-771BC168714B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{008EADA0-85F1-4D69-9689-771BC168714B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{008EADA0-85F1-4D69-9689-771BC168714B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{008EADA0-85F1-4D69-9689-771BC168714B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

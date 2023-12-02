@@ -11,6 +11,6 @@ namespace GameLogic.Classes.Game
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Focus> foci { get; set; }
+        public List<Focus> foci = new List<Focus> { };
     }
 }

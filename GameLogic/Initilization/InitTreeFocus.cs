@@ -25,7 +25,7 @@ namespace GameLogic.Initilization
             {
                 if (i <= 24)
                 {
-                    trees[0].foci.Add(startGame.foci[i]);
+                    trees[0].foci.Add(foci[i]);
                 }
             }
             return trees;

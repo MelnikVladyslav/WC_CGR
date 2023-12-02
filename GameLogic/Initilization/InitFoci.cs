@@ -11,12 +11,8 @@ namespace GameLogic.Initilization
 {
     public class InitFoci
     {
-        //Load
-        Load load = new Load();
-
-        public List<Focus> Init()
+        public List<Focus> Init(List<Parametr> par)
         {
-            StartGame startGame = load.LoadStartInfo();
             List<Focus> list = new List<Focus>() 
             { 
                 //Standart
@@ -32,7 +28,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 100
                         } 
                     }
@@ -49,7 +45,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         }
                     }
@@ -65,7 +61,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         }
                     },
@@ -79,7 +75,7 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[1].Name,
+                                Name = par[1].Name,
                                 Value = 10
                             },
                             new Parametr()
@@ -102,7 +98,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         },
                         new Parametr()
@@ -123,7 +119,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         },
                         new Parametr()
@@ -145,7 +141,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         }
                     }
@@ -161,7 +157,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         }
                     },
@@ -175,7 +171,7 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[2].Name,
+                                Name = par[2].Name,
                                 Value = 10
                             },
                             new Parametr()
@@ -198,7 +194,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         },
                         new Parametr()
@@ -219,7 +215,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         },
                         new Parametr()
@@ -241,7 +237,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         }
                     }
@@ -257,7 +253,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         }
                     },
@@ -271,7 +267,7 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[2].Name,
+                                Name = par[2].Name,
                                 Value = 10
                             },
                             new Parametr()
@@ -294,7 +290,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         },
                         new Parametr()
@@ -315,7 +311,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 50
                         },
                         new Parametr()
@@ -338,7 +334,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 100
                         }
                     }
@@ -360,13 +356,13 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[3].Name,
+                                Name = par[3].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 1,
-                                Name = startGame.parametrs[1].Name,
+                                Name = par[1].Name,
                                 Value = 10
                             }
                         }
@@ -388,13 +384,13 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[3].Name,
+                                Name = par[3].Name,
                                 Value = 20
                             },
                             new Parametr()
                             {
                                 Id = 1,
-                                Name = startGame.parametrs[1].Name,
+                                Name = par[1].Name,
                                 Value = 20
                             }
                         }
@@ -416,13 +412,13 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[3].Name,
+                                Name = par[3].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 1,
-                                Name = startGame.parametrs[1].Name,
+                                Name = par[1].Name,
                                 Value = 10
                             }
                         }
@@ -445,19 +441,19 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[3].Name,
+                                Name = par[3].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 1,
-                                Name = startGame.parametrs[1].Name,
+                                Name = par[1].Name,
                                 Value = -10
                             },
                             new Parametr()
                             {
                                 Id = 2,
-                                Name = startGame.parametrs[2].Name,
+                                Name = par[2].Name,
                                 Value = 10
                             }
                         }
@@ -479,13 +475,13 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[3].Name,
+                                Name = par[3].Name,
                                 Value = 20
                             },
                             new Parametr()
                             {
                                 Id = 1,
-                                Name = startGame.parametrs[2].Name,
+                                Name = par[2].Name,
                                 Value = 10
                             }
                         }
@@ -507,13 +503,13 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[3].Name,
+                                Name = par[3].Name,
                                 Value = -10
                             },
                             new Parametr()
                             {
                                 Id = 1,
-                                Name = startGame.parametrs[1].Name,
+                                Name = par[1].Name,
                                 Value = -10
                             }
                         }
@@ -532,7 +528,7 @@ namespace GameLogic.Initilization
                         new Parametr()
                         {
                             Id = 0,
-                            Name = startGame.parametrs[0].Name,
+                            Name = par[0].Name,
                             Value = 100
                         }
                     }
@@ -554,31 +550,31 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[11].Name,
+                                Name = par[11].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 1,
-                                Name = startGame.parametrs[12].Name,
+                                Name = par[12].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 2,
-                                Name = startGame.parametrs[13].Name,
+                                Name = par[13].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 3,
-                                Name = startGame.parametrs[14].Name,
+                                Name = par[14].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 4,
-                                Name = startGame.parametrs[9].Name,
+                                Name = par[9].Name,
                                 Value = 10
                             }
                         }
@@ -600,31 +596,31 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[11].Name,
+                                Name = par[11].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 1,
-                                Name = startGame.parametrs[12].Name,
+                                Name = par[12].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 2,
-                                Name = startGame.parametrs[13].Name,
+                                Name = par[13].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 3,
-                                Name = startGame.parametrs[14].Name,
+                                Name = par[14].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 4,
-                                Name = startGame.parametrs[9].Name,
+                                Name = par[9].Name,
                                 Value = 20
                             }
                         }
@@ -647,31 +643,31 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[11].Name,
+                                Name = par[11].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 1,
-                                Name = startGame.parametrs[12].Name,
+                                Name = par[12].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 2,
-                                Name = startGame.parametrs[13].Name,
+                                Name = par[13].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 3,
-                                Name = startGame.parametrs[14].Name,
+                                Name = par[14].Name,
                                 Value = 10
                             },
                             new Parametr()
                             {
                                 Id = 4,
-                                Name = startGame.parametrs[9].Name,
+                                Name = par[9].Name,
                                 Value = 10
                             }
                         }
@@ -693,31 +689,31 @@ namespace GameLogic.Initilization
                             new Parametr()
                             {
                                 Id = 0,
-                                Name = startGame.parametrs[11].Name,
+                                Name = par[11].Name,
                                 Value = 20
                             },
                             new Parametr()
                             {
                                 Id = 1,
-                                Name = startGame.parametrs[12].Name,
+                                Name = par[12].Name,
                                 Value = 20
                             },
                             new Parametr()
                             {
                                 Id = 2,
-                                Name = startGame.parametrs[13].Name,
+                                Name = par[13].Name,
                                 Value = 20
                             },
                             new Parametr()
                             {
                                 Id = 3,
-                                Name = startGame.parametrs[14].Name,
+                                Name = par[14].Name,
                                 Value = 20
                             },
                             new Parametr()
                             {
                                 Id = 4,
-                                Name = startGame.parametrs[9].Name,
+                                Name = par[9].Name,
                                 Value = 20
                             }
                         }

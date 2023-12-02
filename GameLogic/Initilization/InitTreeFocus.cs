@@ -11,12 +11,8 @@ namespace GameLogic.Initilization
 {
     public class InitTreeFocus
     {
-        //Load
-        Load load = new Load();
-
-        public List<TreeFocuses> Init()
+        public List<TreeFocuses> Init(List<Focus> foci)
         {
-            StartGame startGame = load.LoadStartInfo();
             List<TreeFocuses> trees = new List<TreeFocuses>()
             {
                 new TreeFocuses()
@@ -25,7 +21,7 @@ namespace GameLogic.Initilization
                     Name = "Standart tree"
                 }
             };
-            for (int i = 0; i < startGame.foci.Count; i++)
+            for (int i = 0; i < foci.Count; i++)
             {
                 if (i <= 24)
                 {

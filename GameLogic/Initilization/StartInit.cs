@@ -27,8 +27,8 @@ namespace GameLogic.Initilization
         public void Start()
         {
             parametrs = initParam.Init();
-            foci = initFoci.Init();
-            treeFoci = initTreeFoci.Init();
+            foci = initFoci.Init(parametrs);
+            treeFoci = initTreeFoci.Init(foci);
             startGame = new StartGame(parametrs, foci, treeFoci);
             save.SaveStartGame(startGame);
         }

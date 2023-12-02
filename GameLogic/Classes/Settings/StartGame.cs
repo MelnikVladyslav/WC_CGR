@@ -11,10 +11,14 @@ namespace GameLogic.Classes.Settings
     public class StartGame
     {
         public List<Parametr> parametrs = new List<Parametr>();
+        public List<Focus> foci = new List<Focus>();
+        public List<TreeFocuses> treesFoci = new List<TreeFocuses>();
 
-        public StartGame(List<Parametr> parametrs) 
+        public StartGame(List<Parametr> parametrs, List<Focus> foci, List<TreeFocuses> treeFocuses) 
         {
             this.parametrs = parametrs;
+            this.foci = foci;
+            this.treesFoci = treeFocuses;
         }
     }
 }

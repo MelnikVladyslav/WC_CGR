@@ -1,4 +1,5 @@
-﻿using GameLogic.Classes.Game;
+﻿using GameLogic.Classes.Game.Foci;
+using GameLogic.Classes.Game.Standart;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameLogic.Classes.Game.Standart;
 
-namespace GameLogic.Classes.Game
+namespace GameLogic.Classes.Game.Foci
 {
     [Serializable]
-    public class Parametr
+    public class Effect
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public float Value { get; set; }
+        public string Description { get; set; }
+        public List<Parametr> parametrs { get; set; }
     }
 }

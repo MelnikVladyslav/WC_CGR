@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameLogic.Classes.Game
+namespace GameLogic.Classes.Game.Standart
 {
     [Serializable]
-    public class TreeFocuses
+    public class Parametr
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Focus> foci = new List<Focus> { };
+        public float Value { get; set; }
     }
 }

@@ -18,18 +18,21 @@ namespace GameLogic.Classes.Settings
         public List<TreeFocuses> treesFoci = new List<TreeFocuses>();
         public List<Ideology> ideologies = new List<Ideology>();
         public List<Leader> leaders = new List<Leader>();
+        public List<Party> parties = new List<Party>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
                          List<TreeFocuses> treeFocuses, 
                          List<Ideology> ideologies,
-                         List<Leader> leaders) 
+                         List<Leader> leaders,
+                         List<Party> parties) 
         {
             this.parametrs = parametrs;
             this.foci = foci;
             treesFoci = treeFocuses;
             this.ideologies = ideologies;
             this.leaders = leaders;
+            this.parties = parties;
         }
     }
 }

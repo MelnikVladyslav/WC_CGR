@@ -19,6 +19,7 @@ namespace GameLogic.Initilization
         List<TreeFocuses> treeFoci = new List<TreeFocuses>();
         List<Ideology> ideologies = new List<Ideology>();
         List<Leader> leaders = new List<Leader>();
+        List<Party> parties = new List<Party>();
         StartGame startGame { get; set; }
 
         //Inits
@@ -27,6 +28,7 @@ namespace GameLogic.Initilization
         InitTreeFocus initTreeFoci = new InitTreeFocus();
         InitIdeol initIdeol = new InitIdeol();
         InitLeaders initLeaders = new InitLeaders();
+        InitParty initParty = new InitParty();
 
         //Save
         Save save = new Save();
@@ -38,7 +40,8 @@ namespace GameLogic.Initilization
             treeFoci = initTreeFoci.Init(foci);
             ideologies = initIdeol.Init(parametrs);
             leaders = initLeaders.Init(parametrs);
-            startGame = new StartGame(parametrs, foci, treeFoci, ideologies, leaders);
+            parties = initParty.Init(ideologies, leaders);
+            startGame = new StartGame(parametrs, foci, treeFoci, ideologies, leaders, parties);
             save.SaveStartGame(startGame);
         }
     }

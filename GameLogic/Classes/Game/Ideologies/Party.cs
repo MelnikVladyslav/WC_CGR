@@ -14,5 +14,6 @@ namespace GameLogic.Classes.Game.Ideologies
         public string Name { get; set; }
         public Ideology ideology { get; set; }
         public Leader leader { get; set; }
+        public DateTime dateCreate { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using GameLogic.Classes.Game.Foci;
 using GameLogic.Classes.Game.Ideologies;
+using GameLogic.Classes.Game.Persons;
 using GameLogic.Classes.Game.Standart;
 using System;
 using System.Collections.Generic;
@@ -16,13 +17,19 @@ namespace GameLogic.Classes.Settings
         public List<Focus> foci = new List<Focus>();
         public List<TreeFocuses> treesFoci = new List<TreeFocuses>();
         public List<Ideology> ideologies = new List<Ideology>();
+        public List<Leader> leaders = new List<Leader>();
 
-        public StartGame(List<Parametr> parametrs, List<Focus> foci, List<TreeFocuses> treeFocuses, List<Ideology> ideologies) 
+        public StartGame(List<Parametr> parametrs, 
+                         List<Focus> foci, 
+                         List<TreeFocuses> treeFocuses, 
+                         List<Ideology> ideologies,
+                         List<Leader> leaders) 
         {
             this.parametrs = parametrs;
             this.foci = foci;
             treesFoci = treeFocuses;
             this.ideologies = ideologies;
+            this.leaders = leaders;
         }
     }
 }

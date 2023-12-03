@@ -126,7 +126,13 @@ namespace GameLogic.Initilization
                 new Parametr()
                 {
                     Id = 18,
-                    Name = "Кількість ",
+                    Name = "Кількість",
+                    Value = 0
+                },
+                new Parametr()
+                {
+                    Id = 19,
+                    Name = "Швидкість",
                     Value = 0
                 }
             };

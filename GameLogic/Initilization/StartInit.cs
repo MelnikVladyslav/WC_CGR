@@ -2,6 +2,7 @@
 using GameLogic.Classes.Game.Ideologies;
 using GameLogic.Classes.Game.Persons;
 using GameLogic.Classes.Game.Standart;
+using GameLogic.Classes.Game.Zakonu;
 using GameLogic.Classes.Settings;
 using GameLogic.Functions.SaveLoad;
 using System;
@@ -20,6 +21,7 @@ namespace GameLogic.Initilization
         List<Ideology> ideologies = new List<Ideology>();
         List<Leader> leaders = new List<Leader>();
         List<Party> parties = new List<Party>();
+        List<Zakonu> zakonus = new List<Zakonu>();
         StartGame startGame { get; set; }
 
         //Inits
@@ -29,6 +31,7 @@ namespace GameLogic.Initilization
         InitIdeol initIdeol = new InitIdeol();
         InitLeaders initLeaders = new InitLeaders();
         InitParty initParty = new InitParty();
+        InitZakons initZakons = new InitZakons();
 
         //Save
         Save save = new Save();
@@ -41,7 +44,8 @@ namespace GameLogic.Initilization
             ideologies = initIdeol.Init(parametrs);
             leaders = initLeaders.Init(parametrs);
             parties = initParty.Init(ideologies, leaders);
-            startGame = new StartGame(parametrs, foci, treeFoci, ideologies, leaders, parties);
+            zakonus = initZakons.Init(parametrs);
+            startGame = new StartGame(parametrs, foci, treeFoci, ideologies, leaders, parties, zakonus);
             save.SaveStartGame(startGame);
         }
     }

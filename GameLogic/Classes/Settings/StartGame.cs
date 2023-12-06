@@ -2,6 +2,7 @@
 using GameLogic.Classes.Game.Ideologies;
 using GameLogic.Classes.Game.Persons;
 using GameLogic.Classes.Game.Standart;
+using GameLogic.Classes.Game.Zakonu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +20,15 @@ namespace GameLogic.Classes.Settings
         public List<Ideology> ideologies = new List<Ideology>();
         public List<Leader> leaders = new List<Leader>();
         public List<Party> parties = new List<Party>();
+        public List<Zakonu> zakonus = new List<Zakonu>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
                          List<TreeFocuses> treeFocuses, 
                          List<Ideology> ideologies,
                          List<Leader> leaders,
-                         List<Party> parties) 
+                         List<Party> parties, 
+                         List<Zakonu> zakonus)
         {
             this.parametrs = parametrs;
             this.foci = foci;
@@ -33,6 +36,7 @@ namespace GameLogic.Classes.Settings
             this.ideologies = ideologies;
             this.leaders = leaders;
             this.parties = parties;
+            this.zakonus = zakonus;
         }
     }
 }

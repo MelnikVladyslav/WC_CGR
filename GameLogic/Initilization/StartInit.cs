@@ -23,6 +23,7 @@ namespace GameLogic.Initilization
         List<Party> parties = new List<Party>();
         List<Zakonu> zakonus = new List<Zakonu>();
         List<Radnuk> radnuks = new List<Radnuk>();
+        List<Generals> generals = new List<Generals>();
         StartGame startGame { get; set; }
 
         //Inits
@@ -34,6 +35,7 @@ namespace GameLogic.Initilization
         InitParty initParty = new InitParty();
         InitZakons initZakons = new InitZakons();
         InitRadnuk initRadnuk = new InitRadnuk();
+        InitGenerals initGenerals = new InitGenerals();
 
         //Save
         Save save = new Save();
@@ -48,7 +50,8 @@ namespace GameLogic.Initilization
             parties = initParty.Init(ideologies, leaders);
             zakonus = initZakons.Init(parametrs);
             radnuks = initRadnuk.Init(parametrs);
-            startGame = new StartGame(parametrs, foci, treeFoci, ideologies, leaders, parties, zakonus, radnuks);
+            generals = initGenerals.Init(parametrs);
+            startGame = new StartGame(parametrs, foci, treeFoci, ideologies, leaders, parties, zakonus, radnuks, generals);
             save.SaveStartGame(startGame);
         }
     }

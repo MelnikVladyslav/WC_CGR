@@ -21,6 +21,7 @@ namespace GameLogic.Classes.Settings
         public List<Leader> leaders = new List<Leader>();
         public List<Party> parties = new List<Party>();
         public List<Zakonu> zakonus = new List<Zakonu>();
+        public List<Radnuk> radnuks = new List<Radnuk>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
@@ -28,7 +29,8 @@ namespace GameLogic.Classes.Settings
                          List<Ideology> ideologies,
                          List<Leader> leaders,
                          List<Party> parties, 
-                         List<Zakonu> zakonus)
+                         List<Zakonu> zakonus,
+                         List<Radnuk> radnuks)
         {
             this.parametrs = parametrs;
             this.foci = foci;
@@ -37,6 +39,7 @@ namespace GameLogic.Classes.Settings
             this.leaders = leaders;
             this.parties = parties;
             this.zakonus = zakonus;
+            this.radnuks = radnuks;
         }
     }
 }

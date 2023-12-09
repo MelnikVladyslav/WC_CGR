@@ -1,5 +1,5 @@
 ﻿using GameLogic.Classes.Game.Standart;
-using GameLogic.Classes.Game.Zakonu;
+using GameLogic.Classes.Game.Uryad.Zakonu;
 using System;
 using System.Collections.Generic;
 using System.Linq;

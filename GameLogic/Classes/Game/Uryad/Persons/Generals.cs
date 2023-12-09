@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameLogic.Classes.Game.Persons
+namespace GameLogic.Classes.Game.Uryad.Persons
 {
     [Serializable]
     public class Generals : Person

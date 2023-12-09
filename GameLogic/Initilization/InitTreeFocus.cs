@@ -1,4 +1,4 @@
-﻿using GameLogic.Classes.Game.Foci;
+﻿using GameLogic.Classes.Game.Uryad.Foci;
 using GameLogic.Classes.Settings;
 using GameLogic.Functions.SaveLoad;
 using System;

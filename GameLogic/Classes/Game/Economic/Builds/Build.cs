@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameLogic.Classes.Game.Persons
+namespace GameLogic.Classes.Game.Economic.Builds
 {
     [Serializable]
-    public class Person
+    public class Build
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public int Age { get; set; }
-        public bool isDead = false;
 
     }
 }

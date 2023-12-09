@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GameLogic.Classes.Game.Standart;
 
-namespace GameLogic.Classes.Game.Foci
+namespace GameLogic.Classes.Game.Uryad.Foci
 {
     [Serializable]
     public class Focus

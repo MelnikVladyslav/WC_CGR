@@ -1,9 +1,10 @@
-﻿using GameLogic.Classes.Game.Foci;
-using GameLogic.Classes.Game.Ideologies;
-using GameLogic.Classes.Game.Persons;
-using GameLogic.Classes.Game.Richenya;
+﻿using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Standart;
-using GameLogic.Classes.Game.Zakonu;
+using GameLogic.Classes.Game.Uryad.Foci;
+using GameLogic.Classes.Game.Uryad.Ideologies;
+using GameLogic.Classes.Game.Uryad.Persons;
+using GameLogic.Classes.Game.Uryad.Richenya;
+using GameLogic.Classes.Game.Uryad.Zakonu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace GameLogic.Classes.Settings
         public List<Radnuk> radnuks = new List<Radnuk>();
         public List<Generals> generals = new List<Generals>();
         public List<Richenya> richenyas = new List<Richenya>();
+        public List<Investitions> investitions = new List<Investitions>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
@@ -35,7 +37,8 @@ namespace GameLogic.Classes.Settings
                          List<Zakonu> zakonus,
                          List<Radnuk> radnuks,
                          List<Generals> generals,
-                         List<Richenya> richenyas)
+                         List<Richenya> richenyas,
+                         List<Investitions> investitions)
         {
             this.parametrs = parametrs;
             this.foci = foci;
@@ -47,6 +50,7 @@ namespace GameLogic.Classes.Settings
             this.radnuks = radnuks;
             this.generals = generals;
             this.richenyas = richenyas;
+            this.investitions = investitions;
         }
     }
 }

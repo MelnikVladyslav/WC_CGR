@@ -1,9 +1,10 @@
-﻿using GameLogic.Classes.Game.Foci;
-using GameLogic.Classes.Game.Ideologies;
-using GameLogic.Classes.Game.Persons;
-using GameLogic.Classes.Game.Richenya;
+﻿using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Standart;
-using GameLogic.Classes.Game.Zakonu;
+using GameLogic.Classes.Game.Uryad.Foci;
+using GameLogic.Classes.Game.Uryad.Ideologies;
+using GameLogic.Classes.Game.Uryad.Persons;
+using GameLogic.Classes.Game.Uryad.Richenya;
+using GameLogic.Classes.Game.Uryad.Zakonu;
 using GameLogic.Classes.Settings;
 using GameLogic.Functions.SaveLoad;
 using System;
@@ -26,6 +27,7 @@ namespace GameLogic.Initilization
         List<Radnuk> radnuks = new List<Radnuk>();
         List<Generals> generals = new List<Generals>();
         List<Richenya> richenyas = new List<Richenya>();
+        List<Investitions> investitions = new List<Investitions>();
         StartGame startGame { get; set; }
 
         //Inits
@@ -39,6 +41,7 @@ namespace GameLogic.Initilization
         InitRadnuk initRadnuk = new InitRadnuk();
         InitGenerals initGenerals = new InitGenerals();
         InitRich initRich = new InitRich();
+        InitInvest initInvest = new InitInvest();
 
         //Save
         Save save = new Save();
@@ -55,6 +58,7 @@ namespace GameLogic.Initilization
             radnuks = initRadnuk.Init(parametrs);
             generals = initGenerals.Init(parametrs);
             richenyas = initRich.Init(parametrs);
+            investitions = initInvest.Init(parametrs);
             startGame = new StartGame(parametrs, 
                                       foci, 
                                       treeFoci, 
@@ -64,7 +68,8 @@ namespace GameLogic.Initilization
                                       zakonus,
                                       radnuks,
                                       generals,
-                                      richenyas);
+                                      richenyas,
+                                      investitions);
             save.SaveStartGame(startGame);
         }
     }

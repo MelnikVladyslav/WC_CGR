@@ -1,11 +1,11 @@
-﻿using GameLogic.Classes.Game.Persons;
+﻿using GameLogic.Classes.Game.Uryad.Persons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameLogic.Classes.Game.Ideologies
+namespace GameLogic.Classes.Game.Uryad.Ideologies
 {
     [Serializable]
     public class Party

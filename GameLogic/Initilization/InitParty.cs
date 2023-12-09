@@ -1,5 +1,5 @@
-﻿using GameLogic.Classes.Game.Ideologies;
-using GameLogic.Classes.Game.Persons;
+﻿using GameLogic.Classes.Game.Uryad.Ideologies;
+using GameLogic.Classes.Game.Uryad.Persons;
 using System;
 using System.Collections.Generic;
 using System.Linq;

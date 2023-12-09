@@ -1,5 +1,5 @@
-﻿using GameLogic.Classes.Game.Richenya;
-using GameLogic.Classes.Game.Standart;
+﻿using GameLogic.Classes.Game.Standart;
+using GameLogic.Classes.Game.Uryad.Richenya;
 using System;
 using System.Collections.Generic;
 using System.Linq;

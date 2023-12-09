@@ -1,6 +1,7 @@
 ﻿using GameLogic.Classes.Game.Foci;
 using GameLogic.Classes.Game.Ideologies;
 using GameLogic.Classes.Game.Persons;
+using GameLogic.Classes.Game.Richenya;
 using GameLogic.Classes.Game.Standart;
 using GameLogic.Classes.Game.Zakonu;
 using System;
@@ -23,6 +24,7 @@ namespace GameLogic.Classes.Settings
         public List<Zakonu> zakonus = new List<Zakonu>();
         public List<Radnuk> radnuks = new List<Radnuk>();
         public List<Generals> generals = new List<Generals>();
+        public List<Richenya> richenyas = new List<Richenya>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
@@ -32,7 +34,8 @@ namespace GameLogic.Classes.Settings
                          List<Party> parties, 
                          List<Zakonu> zakonus,
                          List<Radnuk> radnuks,
-                         List<Generals> generals)
+                         List<Generals> generals,
+                         List<Richenya> richenyas)
         {
             this.parametrs = parametrs;
             this.foci = foci;
@@ -43,6 +46,7 @@ namespace GameLogic.Classes.Settings
             this.zakonus = zakonus;
             this.radnuks = radnuks;
             this.generals = generals;
+            this.richenyas = richenyas;
         }
     }
 }

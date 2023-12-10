@@ -1,4 +1,5 @@
-﻿using GameLogic.Classes.Game.Economic;
+﻿using GameLogic.Classes.Game.Army.Weaponry;
+using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Standart;
 using GameLogic.Classes.Game.Uryad.Foci;
 using GameLogic.Classes.Game.Uryad.Ideologies;
@@ -27,6 +28,7 @@ namespace GameLogic.Classes.Settings
         public List<Generals> generals = new List<Generals>();
         public List<Richenya> richenyas = new List<Richenya>();
         public List<Investitions> investitions = new List<Investitions>();
+        public List<Weapon> weapons = new List<Weapon>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
@@ -38,7 +40,8 @@ namespace GameLogic.Classes.Settings
                          List<Radnuk> radnuks,
                          List<Generals> generals,
                          List<Richenya> richenyas,
-                         List<Investitions> investitions)
+                         List<Investitions> investitions,
+                         List<Weapon> weapons)
         {
             this.parametrs = parametrs;
             this.foci = foci;
@@ -51,6 +54,7 @@ namespace GameLogic.Classes.Settings
             this.generals = generals;
             this.richenyas = richenyas;
             this.investitions = investitions;
+            this.weapons = weapons;
         }
     }
 }

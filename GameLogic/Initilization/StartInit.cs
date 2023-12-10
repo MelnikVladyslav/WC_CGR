@@ -1,4 +1,5 @@
-﻿using GameLogic.Classes.Game.Economic;
+﻿using GameLogic.Classes.Game.Army.Weaponry;
+using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Standart;
 using GameLogic.Classes.Game.Uryad.Foci;
 using GameLogic.Classes.Game.Uryad.Ideologies;
@@ -28,6 +29,7 @@ namespace GameLogic.Initilization
         List<Generals> generals = new List<Generals>();
         List<Richenya> richenyas = new List<Richenya>();
         List<Investitions> investitions = new List<Investitions>();
+        List<Weapon> weapons = new List<Weapon>();
         StartGame startGame { get; set; }
 
         //Inits
@@ -42,6 +44,7 @@ namespace GameLogic.Initilization
         InitGenerals initGenerals = new InitGenerals();
         InitRich initRich = new InitRich();
         InitInvest initInvest = new InitInvest();
+        InitWeapon initWeapon = new InitWeapon();
 
         //Save
         Save save = new Save();
@@ -59,6 +62,7 @@ namespace GameLogic.Initilization
             generals = initGenerals.Init(parametrs);
             richenyas = initRich.Init(parametrs);
             investitions = initInvest.Init(parametrs);
+            weapons = initWeapon.Init(parametrs);
             startGame = new StartGame(parametrs, 
                                       foci, 
                                       treeFoci, 
@@ -69,7 +73,8 @@ namespace GameLogic.Initilization
                                       radnuks,
                                       generals,
                                       richenyas,
-                                      investitions);
+                                      investitions,
+                                      weapons);
             save.SaveStartGame(startGame);
         }
     }

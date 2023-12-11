@@ -1,5 +1,6 @@
 ﻿using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Economic;
+using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
 using GameLogic.Classes.Game.Uryad.Foci;
 using GameLogic.Classes.Game.Uryad.Ideologies;
@@ -30,6 +31,9 @@ namespace GameLogic.Initilization
         List<Richenya> richenyas = new List<Richenya>();
         List<Investitions> investitions = new List<Investitions>();
         List<Weapon> weapons = new List<Weapon>();
+        List<Build> civils = new List<Build>();
+        List<ArmyBuild> armyBuilds = new List<ArmyBuild>();
+        List<DefendBuild> defendBuilds = new List<DefendBuild>();
         StartGame startGame { get; set; }
 
         //Inits
@@ -45,6 +49,7 @@ namespace GameLogic.Initilization
         InitRich initRich = new InitRich();
         InitInvest initInvest = new InitInvest();
         InitWeapon initWeapon = new InitWeapon();
+        InitBuilds initBuilds = new InitBuilds();
 
         //Save
         Save save = new Save();
@@ -63,6 +68,9 @@ namespace GameLogic.Initilization
             richenyas = initRich.Init(parametrs);
             investitions = initInvest.Init(parametrs);
             weapons = initWeapon.Init(parametrs);
+            civils = initBuilds.InitCivil();
+            armyBuilds = initBuilds.InitArmy();
+            defendBuilds = initBuilds.InitDefend();
             startGame = new StartGame(parametrs, 
                                       foci, 
                                       treeFoci, 
@@ -74,7 +82,10 @@ namespace GameLogic.Initilization
                                       generals,
                                       richenyas,
                                       investitions,
-                                      weapons);
+                                      weapons,
+                                      civils,
+                                      armyBuilds,
+                                      defendBuilds);
             save.SaveStartGame(startGame);
         }
     }

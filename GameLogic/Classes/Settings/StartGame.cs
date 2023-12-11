@@ -1,5 +1,6 @@
 ﻿using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Economic;
+using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
 using GameLogic.Classes.Game.Uryad.Foci;
 using GameLogic.Classes.Game.Uryad.Ideologies;
@@ -29,6 +30,9 @@ namespace GameLogic.Classes.Settings
         public List<Richenya> richenyas = new List<Richenya>();
         public List<Investitions> investitions = new List<Investitions>();
         public List<Weapon> weapons = new List<Weapon>();
+        public List<Build> civils = new List<Build>();
+        public List<ArmyBuild> armyBuilds = new List<ArmyBuild>();
+        public List<DefendBuild> defendBuilds = new List<DefendBuild>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
@@ -41,7 +45,10 @@ namespace GameLogic.Classes.Settings
                          List<Generals> generals,
                          List<Richenya> richenyas,
                          List<Investitions> investitions,
-                         List<Weapon> weapons)
+                         List<Weapon> weapons,
+                         List<Build> civils,
+                         List<ArmyBuild> armyBuilds,
+                         List<DefendBuild> defendBuilds)
         {
             this.parametrs = parametrs;
             this.foci = foci;
@@ -55,6 +62,9 @@ namespace GameLogic.Classes.Settings
             this.richenyas = richenyas;
             this.investitions = investitions;
             this.weapons = weapons;
+            this.civils = civils;
+            this.armyBuilds = armyBuilds;
+            this.defendBuilds = defendBuilds;
         }
     }
 }

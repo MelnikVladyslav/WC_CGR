@@ -1,5 +1,4 @@
 ﻿using GameLogic.Classes.Game.Army.Weaponry;
-using GameLogic.Classes.Game.Standart;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +8,9 @@ using System.Threading.Tasks;
 namespace GameLogic.Classes.Game.Economic.Builds
 {
     [Serializable]
-    public class Build
+    public class ArmyBuild : Build
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public float Cost { get; set; }
+        public Weapon Weapon { get; set; }
+        public float Kilkisty { get; set; }
     }
 }

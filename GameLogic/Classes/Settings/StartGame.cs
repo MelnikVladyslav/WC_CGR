@@ -2,6 +2,7 @@
 using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
+using GameLogic.Classes.Game.Technology;
 using GameLogic.Classes.Game.Uryad.Foci;
 using GameLogic.Classes.Game.Uryad.Ideologies;
 using GameLogic.Classes.Game.Uryad.Persons;
@@ -33,6 +34,7 @@ namespace GameLogic.Classes.Settings
         public List<Build> civils = new List<Build>();
         public List<ArmyBuild> armyBuilds = new List<ArmyBuild>();
         public List<DefendBuild> defendBuilds = new List<DefendBuild>();
+        public List<Technology> techs = new List<Technology>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
@@ -48,7 +50,8 @@ namespace GameLogic.Classes.Settings
                          List<Weapon> weapons,
                          List<Build> civils,
                          List<ArmyBuild> armyBuilds,
-                         List<DefendBuild> defendBuilds)
+                         List<DefendBuild> defendBuilds,
+                         List<Technology> technologies)
         {
             this.parametrs = parametrs;
             this.foci = foci;
@@ -65,6 +68,7 @@ namespace GameLogic.Classes.Settings
             this.civils = civils;
             this.armyBuilds = armyBuilds;
             this.defendBuilds = defendBuilds;
+            techs = technologies;
         }
     }
 }

@@ -1,18 +1,14 @@
-﻿using GameLogic.Classes.Game.Army.Weaponry;
+﻿using GameLogic.Classes.Game.Army.Shablons;
+using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
-using GameLogic.Classes.Game.Technology;
+using GameLogic.Classes.Game.Technolog;
 using GameLogic.Classes.Game.Uryad.Foci;
 using GameLogic.Classes.Game.Uryad.Ideologies;
 using GameLogic.Classes.Game.Uryad.Persons;
 using GameLogic.Classes.Game.Uryad.Richenya;
 using GameLogic.Classes.Game.Uryad.Zakonu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameLogic.Classes.Settings
 {
@@ -35,6 +31,7 @@ namespace GameLogic.Classes.Settings
         public List<ArmyBuild> armyBuilds = new List<ArmyBuild>();
         public List<DefendBuild> defendBuilds = new List<DefendBuild>();
         public List<Technology> techs = new List<Technology>();
+        public List<Batalions> batalions = new List<Batalions>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
@@ -51,7 +48,8 @@ namespace GameLogic.Classes.Settings
                          List<Build> civils,
                          List<ArmyBuild> armyBuilds,
                          List<DefendBuild> defendBuilds,
-                         List<Technology> technologies)
+                         List<Technology> technologies,
+                         List<Batalions> batalions)
         {
             this.parametrs = parametrs;
             this.foci = foci;
@@ -69,6 +67,7 @@ namespace GameLogic.Classes.Settings
             this.armyBuilds = armyBuilds;
             this.defendBuilds = defendBuilds;
             techs = technologies;
+            this.batalions = batalions;
         }
     }
 }

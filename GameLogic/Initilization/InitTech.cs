@@ -1,6 +1,6 @@
 ﻿using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Standart;
-using GameLogic.Classes.Game.Technology;
+using GameLogic.Classes.Game.Technolog;
 using System;
 using System.Collections.Generic;
 using System.Linq;

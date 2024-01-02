@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameLogic.Classes.Game.Technology
+namespace GameLogic.Classes.Game.Technolog
 {
     public enum TypeTech
     {

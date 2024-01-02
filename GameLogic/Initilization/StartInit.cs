@@ -1,8 +1,9 @@
-﻿using GameLogic.Classes.Game.Army.Weaponry;
+﻿using GameLogic.Classes.Game.Army.Shablons;
+using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
-using GameLogic.Classes.Game.Technology;
+using GameLogic.Classes.Game.Technolog;
 using GameLogic.Classes.Game.Uryad.Foci;
 using GameLogic.Classes.Game.Uryad.Ideologies;
 using GameLogic.Classes.Game.Uryad.Persons;
@@ -36,6 +37,7 @@ namespace GameLogic.Initilization
         List<ArmyBuild> armyBuilds = new List<ArmyBuild>();
         List<DefendBuild> defendBuilds = new List<DefendBuild>();
         List<Technology> technologies = new List<Technology>();
+        List<Batalions> batalions = new List<Batalions>();
         StartGame startGame { get; set; }
 
         //Inits
@@ -53,6 +55,7 @@ namespace GameLogic.Initilization
         InitWeapon initWeapon = new InitWeapon();
         InitBuilds initBuilds = new InitBuilds();
         InitTech initTech = new InitTech();
+        InitBatalons initBatalons = new InitBatalons();
 
         //Save
         Save save = new Save();
@@ -75,6 +78,7 @@ namespace GameLogic.Initilization
             armyBuilds = initBuilds.InitArmy();
             defendBuilds = initBuilds.InitDefend();
             technologies = initTech.Init(weapons, parametrs);
+            batalions = initBatalons.Init(parametrs);
             startGame = new StartGame(parametrs, 
                                       foci, 
                                       treeFoci, 
@@ -90,7 +94,8 @@ namespace GameLogic.Initilization
                                       civils,
                                       armyBuilds,
                                       defendBuilds,
-                                      technologies);
+                                      technologies,
+                                      batalions);
             save.SaveStartGame(startGame);
         }
     }

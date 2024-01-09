@@ -86,7 +86,10 @@ namespace GameLogic.Initilization
                                       technologies,
                                       batalions,
                                       countries);
-            save.SaveStartGame(startGame);
+            if (!File.Exists("Init/startGame.json"))
+            {
+                save.SaveStartGame(startGame);
+            }
         }
     }
 }

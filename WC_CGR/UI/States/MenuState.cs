@@ -16,6 +16,8 @@ namespace Tutorial013.States
     {
         private List<Component> _components;
 
+        DisplayMode displayMode = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode;
+
         public MenuState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
           : base(game, graphicsDevice, content)
         {
@@ -24,7 +26,7 @@ namespace Tutorial013.States
 
             var newGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(600, 100),
+                Position = new Vector2(displayMode.Width / 2 - buttonTexture.Width / 2, 300),
                 Text = "New Game",
             };
 
@@ -32,7 +34,7 @@ namespace Tutorial013.States
 
             var loadGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(600, 400),
+                Position = new Vector2(displayMode.Width / 2 - buttonTexture.Width / 2, newGameButton.Position.Y + (newGameButton.Position.Y * 40 / 100) ),
                 Text = "Load Game",
             };
 
@@ -40,7 +42,7 @@ namespace Tutorial013.States
 
             var quitGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(600, 700),
+                Position = new Vector2(displayMode.Width / 2 - buttonTexture.Width / 2, loadGameButton.Position.Y + (loadGameButton.Position.Y * 40 / 100)),
                 Text = "Quit Game",
             };
 

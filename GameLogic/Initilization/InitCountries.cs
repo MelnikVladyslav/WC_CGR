@@ -6,7 +6,6 @@ using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
 using GameLogic.Classes.Game.Technolog;
 using GameLogic.Classes.Game.Uryad.Foci;
-using GameLogic.Classes.Game.Uryad.Ideologies;
 using GameLogic.Classes.Game.Uryad.Persons;
 using GameLogic.Classes.Game.Uryad.Richenya;
 using GameLogic.Classes.Game.Uryad.Zakonu;
@@ -22,7 +21,6 @@ namespace GameLogic.Initilization
     {
         public List<Country> Init(List<TreeFocuses> treeFocuses, 
                                   List<Generals> generals,
-                                  List<Radnuk> radnuks,
                                   List<Richenya> richenyas,
                                   List<Zakonu> zakonus,
                                   List<Technology> technologies,
@@ -31,7 +29,6 @@ namespace GameLogic.Initilization
                                   List<Build> builds,
                                   List<ArmyBuild> armyBuilds,
                                   List<DefendBuild> defendBuilds,
-                                  List<Weapon> weapons,
                                   List<Pidrozdil> vzvods)
         {
             List<Country> countries = new List<Country>() 
@@ -3767,7 +3764,89 @@ namespace GameLogic.Initilization
         };
             Random random = new Random();
 
-            
+            //Generals
+            for (int i = 0; i < countries.Count; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    int randIndex = random.Next(0, names.Count);
+                    countries[i].generals.Add(new Generals()
+                    {
+                        Name = names[randIndex],
+                        AttackB = random.Next(1, 5),
+                        DefenceB = random.Next(1, 5),
+                        MoveB = random.Next(1, 5),
+                        Price = new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[0].Name,
+                            Value = 100
+                        }
+                    });
+                }
+            }
+            countries[40].generals = new List<Generals>();
+            countries[45].generals = new List<Generals>();
+            for (int i = 0; i < 5; i++)
+            {
+                countries[40].generals.Add(generals[i]);
+            }
+            for (int i = 4; i < generals.Count; i++)
+            {
+                countries[45].generals.Add(generals[i]);
+            }
+
+            //Radnuks
+            for (int i = 0; i < countries.Count; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    int randIndex = random.Next(0, names.Count);
+                    int rand = random.Next(0, 3);
+                    countries[i].radnuks.Add(new Radnuk()
+                    {
+                        Name = names[randIndex],
+                        parametrs = new List<Parametr>()
+                        {
+                            new Parametr()
+                            {
+                                Id = 0,
+                                Name = parametrs[rand].Name,
+                                Value = 10
+                            }
+                        },
+                        Price = new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[0].Name,
+                            Value = 150
+                        }
+                    });
+                }
+            }
+
+            //Builds
+            for (int i = 0; i < countries.Count; i++)
+            {
+                countries[i].buildsOpen = builds;
+                countries[i].armyBuildsOpen = armyBuilds;
+                countries[i].defendBuildsOpen = defendBuilds;
+            }
+
+            //Weapon
+            for (int i = 0; i < countries.Count; i++)
+            {
+                for (int j = 0; j < technologies.Count; j++)
+                {
+                    if (technologies[j].IsTech == true)
+                    {
+                        if (technologies[j].weapon != null)
+                        {
+                            countries[i].weapons.Add(technologies[j].weapon);
+                        }
+                    }
+                }
+            }
 
             return countries;
         }

@@ -1,11 +1,11 @@
-﻿using GameLogic.Classes.Game.Army.Shablons;
+﻿using GameLogic.Classes.Game;
+using GameLogic.Classes.Game.Army.Shablons;
 using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
 using GameLogic.Classes.Game.Technolog;
 using GameLogic.Classes.Game.Uryad.Foci;
-using GameLogic.Classes.Game.Uryad.Ideologies;
 using GameLogic.Classes.Game.Uryad.Persons;
 using GameLogic.Classes.Game.Uryad.Richenya;
 using GameLogic.Classes.Game.Uryad.Zakonu;
@@ -18,7 +18,6 @@ namespace GameLogic.Classes.Settings
         public List<Parametr> parametrs = new List<Parametr>();
         public List<Focus> foci = new List<Focus>();
         public List<TreeFocuses> treesFoci = new List<TreeFocuses>();
-        public List<Leader> leaders = new List<Leader>();
         public List<Zakonu> zakonus = new List<Zakonu>();
         public List<Radnuk> radnuks = new List<Radnuk>();
         public List<Generals> generals = new List<Generals>();
@@ -30,11 +29,11 @@ namespace GameLogic.Classes.Settings
         public List<DefendBuild> defendBuilds = new List<DefendBuild>();
         public List<Technology> techs = new List<Technology>();
         public List<Pidrozdil> batalions = new List<Pidrozdil>();
+        public List<Country> countries = new List<Country>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
                          List<TreeFocuses> treeFocuses, 
-                         List<Leader> leaders,
                          List<Zakonu> zakonus,
                          List<Radnuk> radnuks,
                          List<Generals> generals,
@@ -45,14 +44,12 @@ namespace GameLogic.Classes.Settings
                          List<ArmyBuild> armyBuilds,
                          List<DefendBuild> defendBuilds,
                          List<Technology> technologies,
-                         List<Pidrozdil> batalions)
+                         List<Pidrozdil> batalions,
+                         List<Country> countries)
         {
             this.parametrs = parametrs;
             this.foci = foci;
             treesFoci = treeFocuses;
-            this.ideologies = ideologies;
-            this.leaders = leaders;
-            this.parties = parties;
             this.zakonus = zakonus;
             this.radnuks = radnuks;
             this.generals = generals;
@@ -64,6 +61,7 @@ namespace GameLogic.Classes.Settings
             this.defendBuilds = defendBuilds;
             techs = technologies;
             this.batalions = batalions;
+            this.countries = countries;
         }
     }
 }

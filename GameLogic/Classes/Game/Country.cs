@@ -5,7 +5,6 @@ using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
 using GameLogic.Classes.Game.Technolog;
 using GameLogic.Classes.Game.Uryad.Foci;
-using GameLogic.Classes.Game.Uryad.Ideologies;
 using GameLogic.Classes.Game.Uryad.Persons;
 using GameLogic.Classes.Game.Uryad.Richenya;
 using GameLogic.Classes.Game.Uryad.Zakonu;
@@ -18,9 +17,6 @@ namespace GameLogic.Classes.Game
         public int Id { get; set; }
         public string Name { get; set; }
         public TreeFocuses treeFocuses { get; set; }
-        public List<Party> parties = new List<Party>();
-        public Party currentParty { get; set; }
-        public Leader leader { get; set; }
         public List<string> nameAlianses = new List<string>();
         public List<Generals> generals = new List<Generals>();
         public List<Radnuk> radnuks = new List<Radnuk>();  
@@ -29,9 +25,9 @@ namespace GameLogic.Classes.Game
         public List<Technology> technologies = new List<Technology>();
         public List<Parametr> parametrs = new List<Parametr>();
         public List<Investitions> investitions = new List<Investitions>();
-        public List<Build> builds = new List<Build>();
-        public List<ArmyBuild> armyBuilds = new List<ArmyBuild>();
-        public List<DefendBuild> defendBuilds = new List<DefendBuild>();
+        public List<Build> buildsOpen = new List<Build>();
+        public List<ArmyBuild> armyBuildsOpen = new List<ArmyBuild>();
+        public List<DefendBuild> defendBuildsOpen = new List<DefendBuild>();
         public List<Weapon> weapons = new List<Weapon>();
         public List<Weapon> aviations = new List<Weapon>();
         public List<Pidrozdil> pidrozdils = new List<Pidrozdil>();

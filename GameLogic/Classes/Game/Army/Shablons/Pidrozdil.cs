@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GameLogic.Classes.Game.Army.Shablons
 {
     [Serializable]
-    public class Batalions
+    public class Pidrozdil
     {
         public int Id { get; set; }
         public string Name { get; set; }

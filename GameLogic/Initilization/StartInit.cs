@@ -24,9 +24,7 @@ namespace GameLogic.Initilization
         List<Parametr> parametrs = new List<Parametr>();
         List<Focus> foci = new List<Focus>();
         List<TreeFocuses> treeFoci = new List<TreeFocuses>();
-        List<Ideology> ideologies = new List<Ideology>();
         List<Leader> leaders = new List<Leader>();
-        List<Party> parties = new List<Party>();
         List<Zakonu> zakonus = new List<Zakonu>();
         List<Radnuk> radnuks = new List<Radnuk>();
         List<Generals> generals = new List<Generals>();
@@ -37,16 +35,14 @@ namespace GameLogic.Initilization
         List<ArmyBuild> armyBuilds = new List<ArmyBuild>();
         List<DefendBuild> defendBuilds = new List<DefendBuild>();
         List<Technology> technologies = new List<Technology>();
-        List<Batalions> batalions = new List<Batalions>();
+        List<Pidrozdil> batalions = new List<Pidrozdil>();
         StartGame startGame { get; set; }
 
         //Inits
         InitParam initParam = new InitParam();
         InitFoci initFoci = new InitFoci();
         InitTreeFocus initTreeFoci = new InitTreeFocus();
-        InitIdeol initIdeol = new InitIdeol();
         InitLeaders initLeaders = new InitLeaders();
-        InitParty initParty = new InitParty();
         InitZakons initZakons = new InitZakons();
         InitRadnuk initRadnuk = new InitRadnuk();
         InitGenerals initGenerals = new InitGenerals();
@@ -65,9 +61,7 @@ namespace GameLogic.Initilization
             parametrs = initParam.Init();
             foci = initFoci.Init(parametrs);
             treeFoci = initTreeFoci.Init(foci);
-            ideologies = initIdeol.Init(parametrs);
             leaders = initLeaders.Init(parametrs);
-            parties = initParty.Init(ideologies, leaders);
             zakonus = initZakons.Init(parametrs);
             radnuks = initRadnuk.Init(parametrs);
             generals = initGenerals.Init(parametrs);
@@ -81,10 +75,8 @@ namespace GameLogic.Initilization
             batalions = initBatalons.Init(parametrs);
             startGame = new StartGame(parametrs, 
                                       foci, 
-                                      treeFoci, 
-                                      ideologies, 
+                                      treeFoci,  
                                       leaders,
-                                      parties,
                                       zakonus,
                                       radnuks,
                                       generals,

@@ -12,7 +12,7 @@ namespace GameLogic.Classes.Game.Army.Shablons
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Batalions> batalions = new List<Batalions>();
+        public List<Pidrozdil> batalions = new List<Pidrozdil>();
         public List<Parametr> parametrs = new List<Parametr>();
     }
 }

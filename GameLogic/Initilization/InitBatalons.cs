@@ -12,11 +12,11 @@ namespace GameLogic.Initilization
 {
     public class InitBatalons
     {
-        public List<Batalions> Init(List<Parametr> parametrs)
+        public List<Pidrozdil> Init(List<Parametr> parametrs)
         {
-            List<Batalions> rotas = new List<Batalions>()
+            List<Pidrozdil> rotas = new List<Pidrozdil>()
             {
-                new Batalions()
+                new Pidrozdil()
                 {
                     Id = 0,
                     Name = "Легка піхота",
@@ -92,7 +92,7 @@ namespace GameLogic.Initilization
                         },
                     }
                 },
-                new Batalions()
+                new Pidrozdil()
                 {
                     Id = 1,
                     Name = "Піхота",
@@ -168,7 +168,7 @@ namespace GameLogic.Initilization
                         },
                     }
                 },
-                new Batalions()
+                new Pidrozdil()
                 {
                     Id = 2,
                     Name = "Артилерійська рота",
@@ -249,7 +249,7 @@ namespace GameLogic.Initilization
                         },
                     }
                 },
-                new Batalions()
+                new Pidrozdil()
                 {
                     Id = 3,
                     Name = "Рота ППО",
@@ -330,7 +330,7 @@ namespace GameLogic.Initilization
                         },
                     }
                 },
-                new Batalions()
+                new Pidrozdil()
                 {
                     Id = 4,
                     Name = "Рота РСЗВ",
@@ -411,7 +411,7 @@ namespace GameLogic.Initilization
                         },
                     }
                 },
-                new Batalions()
+                new Pidrozdil()
                 {
                     Id = 4,
                     Name = "Механізована піхота",
@@ -492,7 +492,7 @@ namespace GameLogic.Initilization
                         },
                     }
                 },
-                new Batalions()
+                new Pidrozdil()
                 {
                     Id = 4,
                     Name = "Броньована піхота",
@@ -573,7 +573,7 @@ namespace GameLogic.Initilization
                         },
                     }
                 },
-                new Batalions()
+                new Pidrozdil()
                 {
                     Id = 4,
                     Name = "Танклва рота",

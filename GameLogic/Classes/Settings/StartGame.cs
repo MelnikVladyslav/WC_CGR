@@ -18,9 +18,7 @@ namespace GameLogic.Classes.Settings
         public List<Parametr> parametrs = new List<Parametr>();
         public List<Focus> foci = new List<Focus>();
         public List<TreeFocuses> treesFoci = new List<TreeFocuses>();
-        public List<Ideology> ideologies = new List<Ideology>();
         public List<Leader> leaders = new List<Leader>();
-        public List<Party> parties = new List<Party>();
         public List<Zakonu> zakonus = new List<Zakonu>();
         public List<Radnuk> radnuks = new List<Radnuk>();
         public List<Generals> generals = new List<Generals>();
@@ -31,14 +29,12 @@ namespace GameLogic.Classes.Settings
         public List<ArmyBuild> armyBuilds = new List<ArmyBuild>();
         public List<DefendBuild> defendBuilds = new List<DefendBuild>();
         public List<Technology> techs = new List<Technology>();
-        public List<Batalions> batalions = new List<Batalions>();
+        public List<Pidrozdil> batalions = new List<Pidrozdil>();
 
         public StartGame(List<Parametr> parametrs, 
                          List<Focus> foci, 
                          List<TreeFocuses> treeFocuses, 
-                         List<Ideology> ideologies,
                          List<Leader> leaders,
-                         List<Party> parties, 
                          List<Zakonu> zakonus,
                          List<Radnuk> radnuks,
                          List<Generals> generals,
@@ -49,7 +45,7 @@ namespace GameLogic.Classes.Settings
                          List<ArmyBuild> armyBuilds,
                          List<DefendBuild> defendBuilds,
                          List<Technology> technologies,
-                         List<Batalions> batalions)
+                         List<Pidrozdil> batalions)
         {
             this.parametrs = parametrs;
             this.foci = foci;

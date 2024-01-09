@@ -21,7 +21,7 @@ namespace GameLogic.Classes.Game
         public List<Party> parties = new List<Party>();
         public Party currentParty { get; set; }
         public Leader leader { get; set; }
-        public string nameAlianse { get; set; }
+        public List<string> nameAlianses = new List<string>();
         public List<Generals> generals = new List<Generals>();
         public List<Radnuk> radnuks = new List<Radnuk>();  
         public List<Richenya> richenyas = new List<Richenya>();
@@ -34,7 +34,7 @@ namespace GameLogic.Classes.Game
         public List<DefendBuild> defendBuilds = new List<DefendBuild>();
         public List<Weapon> weapons = new List<Weapon>();
         public List<Weapon> aviations = new List<Weapon>();
-        public List<Batalions> batalions = new List<Batalions>();
+        public List<Pidrozdil> pidrozdils = new List<Pidrozdil>();
         public List<Rotes> shablonRotes = new List<Rotes>();
         public List<Divisions> shablonDivisions = new List<Divisions>();
         public List<Region> regions = new List<Region>();

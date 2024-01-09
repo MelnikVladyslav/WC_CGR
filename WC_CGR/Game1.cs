@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Tutorial013.States;
 
 namespace WC_CGR
 {
@@ -10,19 +11,44 @@ namespace WC_CGR
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        //Logic game
+        #region Logic
+
         StartInit startInit = new StartInit();
+
+        #endregion
+
+        #region State
+
+        private State _currentState;
+
+        private State _nextState;
+
+        public void ChangeState(State state)
+        {
+            _nextState = state;
+        }
+
+        #endregion
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+
+            _graphics.IsFullScreen = true;
+
+            // Отримання роздільної здатності поточного екрану
+            DisplayMode displayMode = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode;
+
+            // Встановлення роздільної здатності для гри
+            _graphics.PreferredBackBufferWidth = displayMode.Width;
+            _graphics.PreferredBackBufferHeight = displayMode.Height;
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            //Start initilization
             startInit.Start();
 
             base.Initialize();
@@ -32,15 +58,21 @@ namespace WC_CGR
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            _currentState = new MenuState(this, _graphics.GraphicsDevice, Content);
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            if (_nextState != null)
+            {
+                _currentState = _nextState;
 
-            // TODO: Add your update logic here
+                _nextState = null;
+            }
+
+            _currentState.Update(gameTime);
+
+            _currentState.PostUpdate(gameTime);
 
             base.Update(gameTime);
         }
@@ -49,7 +81,7 @@ namespace WC_CGR
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            _currentState.Draw(gameTime, _spriteBatch);
 
             base.Draw(gameTime);
         }

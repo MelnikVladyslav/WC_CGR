@@ -9,22 +9,28 @@ using Microsoft.Xna.Framework.Graphics;
 using Tutorial013.Controls;
 using WC_CGR;
 using WC_CGR.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Tutorial013.States
 {
     public class MenuState : State
     {
         private List<Component> _components;
+        SpriteFont buttonFont;
+        SpriteFont NameFont;
 
         DisplayMode displayMode = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode;
+
+        Button newGameButton;
 
         public MenuState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
           : base(game, graphicsDevice, content)
         {
             var buttonTexture = _content.Load<Texture2D>("Controls/Button");
-            var buttonFont = _content.Load<SpriteFont>("Fonts/MyFont");
+            buttonFont = _content.Load<SpriteFont>("Fonts/MyFont");
+            NameFont = _content.Load<SpriteFont>("Fonts/FontNameGame");
 
-            var newGameButton = new Button(buttonTexture, buttonFont)
+            newGameButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(displayMode.Width / 2 - buttonTexture.Width / 2, 300),
                 Text = "New Game",
@@ -59,6 +65,8 @@ namespace Tutorial013.States
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
+
+            spriteBatch.DrawString(NameFont, "World Control \n Contemporary Geopolitical Rivalries", new Vector2(displayMode.Width / 2 - NameFont.Texture.Width / 2, newGameButton.Position.Y - (newGameButton.Position.Y * 40 / 100)), Color.Black);
 
             foreach (var component in _components)
                 component.Draw(gameTime, spriteBatch);

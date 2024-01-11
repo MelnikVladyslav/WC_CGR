@@ -25,6 +25,13 @@
 /processorParam:TextureFormat=Color
 /build:Controls/glossy-buttons-clipart-design-illustration-free-png.png;Controls/Button.png
 
+#begin Fonts/FontNameGame.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/FontNameGame.spritefont
+
 #begin Fonts/MyFont.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor

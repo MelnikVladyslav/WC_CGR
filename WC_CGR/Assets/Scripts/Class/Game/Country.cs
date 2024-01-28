@@ -8,6 +8,8 @@ using GameLogic.Classes.Game.Uryad.Foci;
 using GameLogic.Classes.Game.Uryad.Persons;
 using GameLogic.Classes.Game.Uryad.Richenya;
 using GameLogic.Classes.Game.Uryad.Zakonu;
+using System;
+using System.Collections.Generic;
 
 namespace GameLogic.Classes.Game
 {

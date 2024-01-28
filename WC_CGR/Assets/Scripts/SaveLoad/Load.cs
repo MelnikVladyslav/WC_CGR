@@ -1,10 +1,11 @@
 ﻿using GameLogic.Classes.Settings;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace GameLogic.Functions.SaveLoad
 {
@@ -18,7 +19,7 @@ namespace GameLogic.Functions.SaveLoad
             string jsonFromFile = File.ReadAllText(urlStart);
 
             // Перетворення JSON у об'єкт
-            StartGame deserializedStartGame = JsonConvert.DeserializeObject<StartGame>(jsonFromFile);
+            StartGame deserializedStartGame = JsonUtility.FromJson<StartGame>(jsonFromFile);
 
             return deserializedStartGame;
         }

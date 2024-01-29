@@ -10,8 +10,8 @@ namespace GameLogic.Classes.Game.Army.Shablons
     [Serializable]
     public class Divisions
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int Id;
+        public string Name;
         public List<Rotes> rotes = new List<Rotes>();
         public List<Parametr> parametrs = new List<Parametr>();
     }

@@ -37,7 +37,7 @@ namespace GameLogic.Initilization
         List<Technology> technologies = new List<Technology>();
         List<Pidrozdil> batalions = new List<Pidrozdil>();
         List<Country> countries = new List<Country>();
-        StartGame startGame { get; set; }
+        StartGame startGame;
 
         //Inits
         InitParam initParam = new InitParam();
@@ -87,10 +87,7 @@ namespace GameLogic.Initilization
                                       technologies,
                                       batalions,
                                       countries);
-            if (!File.Exists("Init/startGame.json"))
-            {
-                save.SaveStartGame(startGame);
-            }
+            save.SaveStartGame(startGame);
         }
     }
 }

@@ -10,10 +10,10 @@ namespace GameLogic.Classes.Game.Uryad.Persons
     [Serializable]
     public class Generals : Person
     {
-        public int AttackB { get; set; }
-        public int DefenceB { get; set; }
-        public int MoveB { get; set; }
+        public int AttackB;
+        public int DefenceB;
+        public int MoveB;
         public List<Parametr> parametrs = new List<Parametr>();
-        public Parametr Price { get; set; }
+        public Parametr Price;
     }
 }

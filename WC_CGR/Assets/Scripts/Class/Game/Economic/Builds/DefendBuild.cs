@@ -9,7 +9,7 @@ namespace GameLogic.Classes.Game.Economic.Builds
     [Serializable]
     public class DefendBuild : Build
     {
-        public float Attack { get; set; }
-        public float Defend { get; set; }
+        public float Attack;
+        public float Defend;
     }
 }

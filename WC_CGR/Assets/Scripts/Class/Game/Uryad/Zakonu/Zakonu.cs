@@ -17,11 +17,11 @@ namespace GameLogic.Classes.Game.Uryad.Zakonu
     [Serializable]
     public class Zakonu
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public TypeZak Type { get; set; }
-        public Parametr Price { get; set; }
-        public List<Parametr> parametrs { get; set; }
+        public int Id;
+        public string Name;
+        public string Description;
+        public TypeZak Type;
+        public Parametr Price;
+        public List<Parametr> parametrs = new List<Parametr>();
     }
 }

@@ -10,7 +10,7 @@ namespace GameLogic.Classes.Game.Economic.Builds
     [Serializable]
     public class ArmyBuild : Build
     {
-        public Weapon Weapon { get; set; }
-        public float Kilkisty { get; set; }
+        public Weapon Weapon;
+        public float Kilkisty;
     }
 }

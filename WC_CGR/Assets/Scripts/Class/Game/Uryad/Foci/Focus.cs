@@ -11,17 +11,17 @@ namespace GameLogic.Classes.Game.Uryad.Foci
     [Serializable]
     public class Focus
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int KilkDay { get; set; }
-        public int KilkDayRemained { get; set; }
-        public List<Parametr> parametrs { get; set; }
-        public List<Condition> conditions { get; set; }
-        public Effect effect { get; set; }
-        public Focus prevFoc { get; set; }
-        public Vector2 position { get; set; }
-        public bool isRes { get; set; }
-        public bool isFoc { get; set; }
+        public int Id;
+        public string Name; 
+        public string Description;
+        public int KilkDay;
+        public int KilkDayRemained;
+        public List<Parametr> parametrs = new List<Parametr>();
+        public List<Condition> conditions = new List<Condition>();
+        public Effect effect;
+        public Focus prevFoc;
+        public Vector2 position;
+        public bool isRes;
+        public bool isFoc;      
     }
 }

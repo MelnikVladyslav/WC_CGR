@@ -11,7 +11,7 @@ namespace GameLogic.Initilization
     {
         public List<Parametr> Init()
         {
-            List<Parametr> list = new List<Parametr>() 
+            List<Parametr> list = new List<Parametr> 
             {
                 new Parametr()
                 {

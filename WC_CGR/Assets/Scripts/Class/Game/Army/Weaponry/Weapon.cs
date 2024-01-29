@@ -19,11 +19,11 @@ namespace GameLogic.Classes.Game.Army.Weaponry
     [Serializable]
     public class Weapon
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public float ProductionCost { get; set; }
-        public TypeWeapon Type { get; set; }
+        public int Id;
+        public string Name;
+        public string Description;
+        public float ProductionCost;
+        public TypeWeapon Type; 
         public List<Parametr> parametrs = new List<Parametr>();
     }
 }

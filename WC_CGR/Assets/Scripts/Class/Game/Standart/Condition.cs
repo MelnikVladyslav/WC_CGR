@@ -9,9 +9,9 @@ namespace GameLogic.Classes.Game.Standart
     [Serializable]
     public class Condition
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public List<Parametr> parametrs { get; set; }
+        public int Id;
+        public string Name;
+        public string Description;
+        public List<Parametr> parametrs = new List<Parametr>();
     }
 }

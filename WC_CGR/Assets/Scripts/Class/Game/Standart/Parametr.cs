@@ -9,8 +9,8 @@ namespace GameLogic.Classes.Game.Standart
     [Serializable]
     public class Parametr
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public float Value { get; set; }
+        public int Id;
+        public string Name;     
+        public float Value;
     }
 }

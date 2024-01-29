@@ -11,8 +11,8 @@ namespace GameLogic.Classes.Game.Economic.Builds
     [Serializable]
     public class Build
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public float Cost { get; set; }
+        public int Id;
+        public string Name;
+        public float Cost;
     }
 }

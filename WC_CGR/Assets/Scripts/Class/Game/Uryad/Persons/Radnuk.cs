@@ -11,6 +11,6 @@ namespace GameLogic.Classes.Game.Uryad.Persons
     public class Radnuk : Person
     {
         public List<Parametr> parametrs = new List<Parametr>();
-        public Parametr Price { get; set; }
+        public Parametr Price;
     }
 }

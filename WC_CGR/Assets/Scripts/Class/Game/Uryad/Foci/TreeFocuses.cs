@@ -9,8 +9,8 @@ namespace GameLogic.Classes.Game.Uryad.Foci
     [Serializable]
     public class TreeFocuses
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int Id;
+        public string Name;
         public List<Focus> foci = new List<Focus> { };
     }
 }

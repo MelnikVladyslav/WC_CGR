@@ -19,16 +19,16 @@ namespace GameLogic.Classes.Game.Technolog
     [Serializable]
     public class Technology
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public TypeTech Type { get; set; }
-        public bool IsRes { get; set; }
+        public int Id;
+        public string Name;
+        public string Description;
+        public TypeTech Type;
+        public bool IsRes;
         public bool IsTech = false;
-        public int KilkDay { get; set; }
-        public int KilkDayRemained { get; set; }
-        public Technology prevTech { get; set; }
-        public Weapon weapon { get; set; }
+        public int KilkDay;
+        public int KilkDayRemained;
+        public Technology prevTech;
+        public Weapon weapon;
         public List<Parametr> parametrs = new List<Parametr>();
     }
 }

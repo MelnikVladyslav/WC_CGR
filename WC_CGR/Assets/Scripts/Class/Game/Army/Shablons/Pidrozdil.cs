@@ -11,8 +11,8 @@ namespace GameLogic.Classes.Game.Army.Shablons
     [Serializable]
     public class Pidrozdil
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int Id;
+        public string Name;
         public List<WeaponRota> weapons = new List<WeaponRota>();
         public List<Parametr> parametrs = new List<Parametr>();
     }

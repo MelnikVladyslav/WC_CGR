@@ -9,10 +9,10 @@ namespace GameLogic.Classes.Game.Uryad.Persons
     [Serializable]
     public class Person
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int Age { get; set; }
+        public int Id;
+        public string Name;
+        public string Description;
+        public int Age;
         public bool isDead = false;
 
     }

@@ -16,9 +16,9 @@ namespace GameLogic.Classes.Game
     [Serializable]
     public class Country
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public TreeFocuses treeFocuses { get; set; }
+        public int Id;
+        public string Name;
+        public TreeFocuses treeFocuses;
         public List<string> nameAlianses = new List<string>();
         public List<Generals> generals = new List<Generals>();
         public List<Radnuk> radnuks = new List<Radnuk>();  
@@ -36,6 +36,6 @@ namespace GameLogic.Classes.Game
         public List<Rotes> shablonRotes = new List<Rotes>();
         public List<Divisions> shablonDivisions = new List<Divisions>();
         public List<Region> regions = new List<Region>();
-        public Region capital { set; get; }
+        public Region capital;
     }
 }

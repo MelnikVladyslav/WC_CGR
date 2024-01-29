@@ -12,9 +12,9 @@ namespace GameLogic.Classes.Game
     [Serializable]
     public class Region
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string nameCity { get; set; }
+        public int Id;
+        public string Name;
+        public string nameCity;
         public List<Build> builds = new List<Build>();
         public List<ArmyBuild> armyBuilds = new List<ArmyBuild>();
         public List<DefendBuild> defendBuilds = new List<DefendBuild>();

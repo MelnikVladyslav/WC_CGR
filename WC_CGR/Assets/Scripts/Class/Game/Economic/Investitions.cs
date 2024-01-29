@@ -10,8 +10,8 @@ namespace GameLogic.Classes.Game.Economic
     [Serializable]
     public class Investitions
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int Id;
+        public string Name;
         public List<Parametr> parametrs = new List<Parametr>();
     }
 }

@@ -10,7 +10,7 @@ namespace GameLogic.Classes.Game.Army
     [Serializable]
     public class WeaponRota
     {
-        public string weapon { set; get; }
-        public int Kilkisty { set; get; }
+        public string weapon;
+        public int Kilkisty;
     }
 }

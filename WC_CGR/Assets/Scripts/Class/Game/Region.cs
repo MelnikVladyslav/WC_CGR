@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace GameLogic.Classes.Game
 {
@@ -15,6 +16,7 @@ namespace GameLogic.Classes.Game
         public int Id;
         public string Name;
         public string nameCity;
+        public GameObject prefab;
         public List<Build> builds = new List<Build>();
         public List<ArmyBuild> armyBuilds = new List<ArmyBuild>();
         public List<DefendBuild> defendBuilds = new List<DefendBuild>();

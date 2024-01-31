@@ -1,4 +1,5 @@
-﻿using GameLogic.Classes.Settings;
+﻿using Assets.Scripts.Class.Settings;
+using GameLogic.Classes.Settings;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,10 @@ namespace GameLogic.Functions.SaveLoad
     {
         public string folderPathInit = "Init";
         public string urlStart = "Init/startGame.json";
+
+        public string folderPathGame = "Game";
+        public string urlGame = "Game/players.json";
+
         public void SaveStartGame(StartGame startGame)
         {
             // Перевірка наявності папки
@@ -27,6 +32,22 @@ namespace GameLogic.Functions.SaveLoad
 
             // Збереження у файл
             File.WriteAllText(urlStart, json);
+        }
+
+        public void SavePlayers(Players players)
+        {
+            // Перевірка наявності папки
+            if (!Directory.Exists(folderPathGame))
+            {
+                // Якщо папка не існує, створіть її
+                Directory.CreateDirectory(folderPathGame);
+            }
+
+            // Перетворення об'єкта у JSON-рядок
+            string json = JsonUtility.ToJson(players);
+
+            // Збереження у файл
+            File.WriteAllText(urlGame, json);
         }
     }
 }

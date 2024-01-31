@@ -25,7 +25,7 @@ namespace GameLogic.Initilization
                         new WeaponRota()
                         {
                             weapon = "Піхотне оснащення",
-                            Kilkisty = 100
+                            Kilkisty = 10
                         }
                     },
                     parametrs = new List<Parametr>()
@@ -101,7 +101,7 @@ namespace GameLogic.Initilization
                         new WeaponRota()
                         {
                             weapon = "Піхотне оснащення",
-                            Kilkisty = 100
+                            Kilkisty = 10
                         }
                     },
                     parametrs = new List<Parametr>()
@@ -182,7 +182,7 @@ namespace GameLogic.Initilization
                         new WeaponRota()
                         {
                             weapon = "Польова артилерія",
-                            Kilkisty = 10
+                            Kilkisty = 1
                         }
                     },
                     parametrs = new List<Parametr>()
@@ -263,7 +263,7 @@ namespace GameLogic.Initilization
                         new WeaponRota()
                         {
                             weapon = "ППО",
-                            Kilkisty = 10
+                            Kilkisty = 1
                         }
                     },
                     parametrs = new List<Parametr>()
@@ -344,7 +344,7 @@ namespace GameLogic.Initilization
                         new WeaponRota()
                         {
                             weapon = "РСЗВ",
-                            Kilkisty = 10
+                            Kilkisty = 1
                         }
                     },
                     parametrs = new List<Parametr>()
@@ -425,7 +425,7 @@ namespace GameLogic.Initilization
                         new WeaponRota()
                         {
                             weapon = "БМП",
-                            Kilkisty = 30
+                            Kilkisty = 3
                         }
                     },
                     parametrs = new List<Parametr>()
@@ -506,7 +506,7 @@ namespace GameLogic.Initilization
                         new WeaponRota()
                         {
                             weapon = "БТР",
-                            Kilkisty = 30
+                            Kilkisty = 3
                         }
                     },
                     parametrs = new List<Parametr>()
@@ -587,7 +587,7 @@ namespace GameLogic.Initilization
                         new WeaponRota()
                         {
                             weapon = "Танки",
-                            Kilkisty = 30
+                            Kilkisty = 3
                         }
                     },
                     parametrs = new List<Parametr>()

@@ -1,3 +1,4 @@
+using Assets.Scripts.Class.Settings;
 using GameLogic.Classes.Game;
 using GameLogic.Classes.Settings;
 using GameLogic.Functions.SaveLoad;
@@ -18,14 +19,11 @@ public class GameManager : MonoBehaviour
     public GameObject MiniMenu;
     #endregion
 
-    #region Bools values
-    bool isStartGame = false;
-    #endregion
-
     #region Start game
     public Dropdown dropdownCountries;
     public Dropdown dropdownKilkPl;
     Load load = new Load();
+    Save save = new Save();
     List<Country> countries = new List<Country>();
     StartGame loadStartInit;
     Random random = new Random();
@@ -72,7 +70,14 @@ public class GameManager : MonoBehaviour
             }
             listBots.Add(countries[rand]);
         }
-        isStartGame = true;
+        PlayerPrefs.SetInt("kilk", kilkPl);
+
+        Players pl = new Players()
+        {
+            Player = player,
+            bots = listBots
+        };
+        save.SavePlayers(pl);
     }
 
     // Update is called once per frame

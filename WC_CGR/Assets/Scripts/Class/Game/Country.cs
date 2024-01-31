@@ -10,6 +10,7 @@ using GameLogic.Classes.Game.Uryad.Richenya;
 using GameLogic.Classes.Game.Uryad.Zakonu;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace GameLogic.Classes.Game
 {

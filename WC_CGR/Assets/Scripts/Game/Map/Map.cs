@@ -13,7 +13,7 @@ namespace Assets.Scripts.Game.Map
         #region Cells parametrs
         public GameObject prefabTemplate;
         public GameObject prefabTemplateCapital;
-        public Transform map;
+        public GameObject map;
         List<int> pos = new List<int>();
         List<int> posY = new List<int>();
         int h = 10, w = 30;
@@ -60,7 +60,8 @@ namespace Assets.Scripts.Game.Map
                     }
                     else
                     {
-                        cells.Add(Instantiate(prefabTemplate, new Vector3(map.transform.position.x + (3 * j), map.transform.position.y), Quaternion.identity));
+                        GameObject cell = Instantiate(prefabTemplate, new Vector3(map.transform.position.x + (3 * j), map.transform.position.y), Quaternion.identity);
+                        cells.Add(cell);
                     }
                 }
                 map.transform.position = new Vector3(map.transform.position.x, map.transform.position.y + 3);
@@ -75,10 +76,12 @@ namespace Assets.Scripts.Game.Map
             players = load.LoadPlayersInfo();
 
             players.Player.capital = cellsCap[0].currentRegion;
+            players.Player.regions.Add(cellsCap[0].currentRegion);
             mainCamera.transform.position = new Vector3(cellsCap[0].currentRegion.prefab.transform.position.x, cellsCap[0].currentRegion.prefab.transform.position.y, mainCamera.transform.position.z);
             for (int i = 0; i < kilkPl - 1; i++)
             {
                 players.bots[i].capital = cellsCap[i + 1].currentRegion;
+                players.bots[i].regions.Add(cellsCap[i + 1].currentRegion);
             }
             save.SavePlayers(players);
         }

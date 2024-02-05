@@ -77,6 +77,13 @@ public class GameManager : MonoBehaviour
             Player = player,
             bots = listBots
         };
+        pl.Player.parametrs[1].Value = 50;
+        pl.Player.parametrs[2].Value = 50;
+        for (int i = 0; i < pl.bots.Count; i++)
+        {
+            pl.bots[i].parametrs[1].Value = 50;
+            pl.bots[i].parametrs[2].Value = 50;
+        }
         save.SavePlayers(pl);
     }
 

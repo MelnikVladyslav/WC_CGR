@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Class.Settings;
+using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Functions.SaveLoad;
 using System.Collections;
 using System.Collections.Generic;
@@ -53,18 +54,18 @@ namespace Assets.Scripts.Game.Map
                 {
                     if ((pos.Contains(j) && posY.Contains(i)) && kilkPlPlaced > 0)
                     {
-                        GameObject capital = Instantiate(prefabTemplateCapital, new Vector3(map.transform.position.x + (3 * j), map.transform.position.y), Quaternion.identity);
+                        GameObject capital = Instantiate(prefabTemplateCapital, new Vector3(map.transform.position.x + (3 * j), map.transform.position.y, map.transform.position.z), Quaternion.identity);
                         cells.Add(capital);
                         cellsCap.Add(capital.GetComponent<Cell>());
                         kilkPlPlaced--;
                     }
                     else
                     {
-                        GameObject cell = Instantiate(prefabTemplate, new Vector3(map.transform.position.x + (3 * j), map.transform.position.y), Quaternion.identity);
+                        GameObject cell = Instantiate(prefabTemplate, new Vector3(map.transform.position.x + (3 * j), map.transform.position.y, map.transform.position.z), Quaternion.identity);
                         cells.Add(cell);
                     }
                 }
-                map.transform.position = new Vector3(map.transform.position.x, map.transform.position.y + 3);
+                map.transform.position = new Vector3(map.transform.position.x, map.transform.position.y + 3, map.transform.position.z);
             }
             isMapGen = true;
             #endregion
@@ -75,15 +76,104 @@ namespace Assets.Scripts.Game.Map
         {
             players = load.LoadPlayersInfo();
 
+            cellsCap[0].currentRegion.builds = new List<Build>()
+                        {
+                            new Build()
+                            {
+                                Id = 0,
+                                Name = "Цивільні фабрики",
+                                Cost = 1000
+                            },
+                            new Build()
+                            {
+                                Id = 1,
+                                Name = "Інфаструктура",
+                                Cost = 100
+                            }
+                        };
+            cellsCap[0].currentRegion.armyBuilds = new List<ArmyBuild>()
+                        {
+                            new ArmyBuild()
+                            {
+                                Id = 0,
+                                Name = "Військові заводи",
+                                Cost = 1200
+                            }
+                        };
+            cellsCap[0].currentRegion.defendBuilds = new List<DefendBuild>()
+                        {
+                            new DefendBuild()
+                            {
+                                Id = 0,
+                                Name = "Укріплення",
+                                Cost = 500,
+                                Attack = 5,
+                                Defend = 5
+                            },
+                            new DefendBuild()
+                            {
+                                Id = 1,
+                                Name = "ППО",
+                                Cost = 500,
+                                Attack = 5,
+                                Defend = 5
+                            }
+                        };
+            cellsCap[0].currentRegion.parametrs[1].Value = cellsCap[0].currentRegion.builds.Count + cellsCap[0].currentRegion.armyBuilds.Count + cellsCap[0].currentRegion.defendBuilds.Count;
             players.Player.capital = cellsCap[0].currentRegion;
             players.Player.regions.Add(cellsCap[0].currentRegion);
             mainCamera.transform.position = new Vector3(cellsCap[0].currentRegion.prefab.transform.position.x, cellsCap[0].currentRegion.prefab.transform.position.y, mainCamera.transform.position.z);
             for (int i = 0; i < kilkPl - 1; i++)
             {
+                cellsCap[i + 1].currentRegion.builds = new List<Build>()
+                        {
+                            new Build()
+                            {
+                                Id = 0,
+                                Name = "Цивільні фабрики",
+                                Cost = 1000
+                            },
+                            new Build()
+                            {
+                                Id = 1,
+                                Name = "Інфаструктура",
+                                Cost = 100
+                            }
+                        };
+                cellsCap[i + 1].currentRegion.armyBuilds = new List<ArmyBuild>()
+                        {
+                            new ArmyBuild()
+                            {
+                                Id = 0,
+                                Name = "Військові заводи",
+                                Cost = 1200
+                            }
+                        };
+                cellsCap[i + 1].currentRegion.defendBuilds = new List<DefendBuild>()
+                        {
+                            new DefendBuild()
+                            {
+                                Id = 0,
+                                Name = "Укріплення",
+                                Cost = 500,
+                                Attack = 5,
+                                Defend = 5
+                            },
+                            new DefendBuild()
+                            {
+                                Id = 1,
+                                Name = "ППО",
+                                Cost = 500,
+                                Attack = 5,
+                                Defend = 5
+                            }
+                        };
+                cellsCap[i + 1].currentRegion.parametrs[1].Value = cellsCap[i + 1].currentRegion.builds.Count + cellsCap[i + 1].currentRegion.armyBuilds.Count + cellsCap[i + 1].currentRegion.defendBuilds.Count;
                 players.bots[i].capital = cellsCap[i + 1].currentRegion;
                 players.bots[i].regions.Add(cellsCap[i + 1].currentRegion);
             }
             save.SavePlayers(players);
+            PlayerPrefs.SetInt("isFinAddCap", 0);
         }
 
         // Update is called once per frame

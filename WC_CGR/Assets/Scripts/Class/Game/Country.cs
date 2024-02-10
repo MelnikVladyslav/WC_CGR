@@ -38,6 +38,7 @@ namespace GameLogic.Classes.Game
         public List<Divisions> shablonDivisions = new List<Divisions>();
         public List<Region> regions = new List<Region>();
         public List<Effect> effects = new List<Effect>();
+        public Focus currentFocus;
         public int bonusTech = 1;
         public Region capital;
     }

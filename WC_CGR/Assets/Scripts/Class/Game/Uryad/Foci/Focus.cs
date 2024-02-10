@@ -4,6 +4,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using Assets.Scripts.Class.Game.Uryad.Foci;
 using GameLogic.Classes.Game.Standart;
 
 namespace GameLogic.Classes.Game.Uryad.Foci
@@ -19,9 +20,9 @@ namespace GameLogic.Classes.Game.Uryad.Foci
         public List<Parametr> parametrs = new List<Parametr>();
         public List<Condition> conditions = new List<Condition>();
         public Effect effect;
-        public Focus prevFoc;
+        public PrevFoc prevFoc = new PrevFoc();
         public Vector2 position;
-        public bool isRes;
+        public bool isDost = true;
         public bool isFoc;      
     }
 }

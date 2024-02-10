@@ -79,12 +79,6 @@ namespace GameLogic.Initilization
                                 Id = 0,
                                 Name = par[1].Name,
                                 Value = 10
-                            },
-                            new Parametr()
-                            {
-                                Id = 1,
-                                Name = "підтримка демократів",
-                                Value = (float)0.05
                             }
                         }
                     }
@@ -175,12 +169,6 @@ namespace GameLogic.Initilization
                                 Id = 0,
                                 Name = par[2].Name,
                                 Value = 10
-                            },
-                            new Parametr()
-                            {
-                                Id = 1,
-                                Name = "підтримка націоналістів",
-                                Value = (float)0.05
                             }
                         }
                     }
@@ -271,12 +259,6 @@ namespace GameLogic.Initilization
                                 Id = 0,
                                 Name = par[2].Name,
                                 Value = 10
-                            },
-                            new Parametr()
-                            {
-                                Id = 1,
-                                Name = "підтримка проросійських сил",
-                                Value = (float)0.05
                             }
                         }
                     }
@@ -726,30 +708,30 @@ namespace GameLogic.Initilization
             //Підключення залежностей фокусів
             //Standart
             //Polit
-            list[1].prevFoc = list[0];
-            list[2].prevFoc = list[1];
-            list[3].prevFoc = list[2];
-            list[4].prevFoc = list[3];
-            list[5].prevFoc = list[0];
-            list[6].prevFoc = list[5];
-            list[7].prevFoc = list[6];
-            list[8].prevFoc = list[7];
-            list[9].prevFoc = list[0];
-            list[10].prevFoc = list[9];
-            list[11].prevFoc = list[10];
-            list[12].prevFoc = list[11];
+            list[1].prevFoc.prevFocus = list[0];
+            list[2].prevFoc.prevFocus = list[1];
+            list[3].prevFoc.prevFocus = list[2];
+            list[4].prevFoc.prevFocus = list[3];
+            list[5].prevFoc.prevFocus = list[0];
+            list[6].prevFoc.prevFocus = list[5];
+            list[7].prevFoc.prevFocus = list[6];
+            list[8].prevFoc.prevFocus = list[7];
+            list[9].prevFoc.prevFocus = list[0];
+            list[10].prevFoc.prevFocus = list[9];
+            list[11].prevFoc.prevFocus = list[10];
+            list[12].prevFoc.prevFocus = list[11];
             //Economic
-            list[14].prevFoc = list[13];
-            list[15].prevFoc = list[14];
-            list[16].prevFoc = list[15];
-            list[17].prevFoc = list[13];
-            list[18].prevFoc = list[17];
-            list[19].prevFoc = list[18];
+            list[14].prevFoc.prevFocus = list[13];
+            list[15].prevFoc.prevFocus = list[14];
+            list[16].prevFoc.prevFocus = list[15];
+            list[17].prevFoc.prevFocus = list[13];
+            list[18].prevFoc.prevFocus = list[17];
+            list[19].prevFoc.prevFocus = list[18];
             //Army
-            list[21].prevFoc = list[20];
-            list[22].prevFoc = list[21];
-            list[23].prevFoc = list[20];
-            list[24].prevFoc = list[23];
+            list[21].prevFoc.prevFocus = list[20];
+            list[22].prevFoc.prevFocus = list[21];
+            list[23].prevFoc.prevFocus = list[20];
+            list[24].prevFoc.prevFocus = list[23];
 
             return list;
         }

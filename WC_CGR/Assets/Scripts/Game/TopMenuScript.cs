@@ -38,6 +38,8 @@ namespace Assets.Scripts.Game
         bool isTurn = true;
         float pop = 0;
         float kilkFab = 0;
+        float inv = 0;
+        float curVvpBonus = 0;
 
         // Use this for initialization
         void Start()
@@ -64,9 +66,20 @@ namespace Assets.Scripts.Game
                 PlayerPrefs.SetInt("isFinAddCap", 1);
             }
 
+            //Turn
+            if(PlayerPrefs.GetInt("Turn") == 0)
+            {
+                pl = load.LoadPlayersInfo();
+                player = pl.Player;
+                isTurn = true;
+                PlayerPrefs.SetInt("Turn", 1);
+            }
+
             //Update param
             if (isTurn)
             {
+                pop = 0;
+                kilkFab = 0;
                 for (int i = 0; i < player.regions.Count; i++)
                 {
                     pop += player.regions[i].parametrs[0].Value;
@@ -80,7 +93,21 @@ namespace Assets.Scripts.Game
                 {
                     player.parametrs[4].Value = kilkFab;
                 }
-                player.parametrs[3].Value = ((player.investitions.Count + player.bonusTech) * player.parametrs[1].Value) / (player.parametrs[5].Value + player.parametrs[4].Value);
+                float invTum = 0;
+                for (int i = 0; i < player.investitions.Count; i++)
+                {
+                    invTum += player.investitions[i].parametrs[0].Value;
+                }
+                if(invTum != inv)
+                {
+                    inv = invTum;
+                }
+                float vvpB = PlayerPrefs.GetFloat("vvpBonus");
+                if(vvpB != curVvpBonus)
+                {
+                    curVvpBonus = vvpB;
+                }
+                player.parametrs[3].Value = ((inv + player.bonusTech + curVvpBonus) * player.parametrs[1].Value) / (player.parametrs[5].Value + player.parametrs[4].Value);
                 player.parametrs[6].Value = player.parametrs[5].Value * player.zakonus[1].parametrs[2].Value;
 
                 nameCount.text = player.Name;

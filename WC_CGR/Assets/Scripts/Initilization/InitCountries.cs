@@ -3759,9 +3759,9 @@ namespace GameLogic.Initilization
                 },
             };
             List<string> names = new List<string>
-        {
-            "Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace", "Harry", "Ivy", "Jack"
-        };
+            {
+                "Аліса", "Боб", "Чарлі", "Давид", "Єва", "Франк", "Грейс", "Гаррі", "Іві", "Джек"
+            };
             Random random = new Random();
 
             //Generals

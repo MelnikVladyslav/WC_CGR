@@ -136,6 +136,42 @@ namespace Assets.Scripts.Game.Managers
                 }
                 isEc = false;
             }
+            if (isMob)
+            {
+                foreach (Transform child in contentPar.transform)
+                {
+                    Destroy(child.gameObject);
+                }
+                for (int i = 2; i < 7; i++)
+                {
+                    GameObject curLaw = Instantiate(lawPrefab, contentPar.transform);
+                    curLaw.transform.position = new Vector3(curLaw.transform.position.x, curLaw.transform.position.y - (2 * i), curLaw.transform.position.z);
+                    textLaw = curLaw.GetComponentInChildren<Text>();
+                    enterLaw = curLaw.GetComponentInChildren<Button>();
+                    textLaw.text = game.zakonus[i].Name + "\n";
+                    for (int j = 0; j < game.zakonus[i].parametrs.Count; j++)
+                    {
+                        textLaw.text += game.zakonus[i].parametrs[j].Name + " : " + game.zakonus[i].parametrs[j].Value + "\n";
+                    }
+                    textLaw.text += "Price: " + game.zakonus[i].Price.Value.ToString();
+
+                    Button curBut = enterLaw;
+                    for (int j = 0; j < player.zakonus.Count; j++)
+                    {
+                        if (game.zakonus[i].Type == TypeZak.Prizov)
+                        {
+                            if (game.zakonus[i].Name == player.zakonus[j].Name)
+                            {
+                                curBut.gameObject.SetActive(false);
+                            }
+                        }
+                    }
+
+                    int curId = i;
+                    enterLaw.onClick.AddListener(() => Enter(curId, TypeZak.Prizov));
+                }
+                isMob = false;
+            }
         }
 
         void Enter(int id, TypeZak type)

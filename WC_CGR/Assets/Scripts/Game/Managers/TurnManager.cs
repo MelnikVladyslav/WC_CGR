@@ -26,6 +26,9 @@ namespace Assets.Scripts.Game
 
         public Text textDate;
 
+        float stabaRich = 0;
+        float warSupRich = 0;
+
         // Use this for initialization
         void Start()
         {
@@ -138,15 +141,31 @@ namespace Assets.Scripts.Game
             PlayerPrefs.SetFloat("vvpBonus", vvpBonus);
             vvpBonus = 0;
 
+            //Richenyas
+            int kilkDRS = PlayerPrefs.GetInt("kilkDayRichStab");
+            int kilkDRW = PlayerPrefs.GetInt("kilkDayRichWar");
+            if (kilkDRS != 0)
+            {
+                stabaRich += (0.05f * ((200 - kilkDRS) / kilkDayInTurn));
+                kilkDRS -= 10;
+                PlayerPrefs.SetInt("kilkDayRichStab", kilkDRS);
+            }
+            if (kilkDRW != 0)
+            {
+                warSupRich += (0.05f * ((200 - kilkDRW) / kilkDayInTurn));
+                kilkDRW -= 10;
+                PlayerPrefs.SetInt("kilkDayRichWar", kilkDRW);
+            }
+
             //Final values parametres
             //Staba
             if (stabaNew > 100)
             {
                 stabaNew = 100;
             }
-            if(curStab != stabaNew)
+            if(curStab != stabaNew + stabaRich)
             {
-                curStab = stabaNew;
+                curStab = stabaNew + stabaRich;
                 player.parametrs[1].Value = curStab;
             }
             //War sup
@@ -154,9 +173,9 @@ namespace Assets.Scripts.Game
             {
                 warSupNew = 100;
             }
-            if (curWarSup != warSupNew)
+            if (curWarSup != warSupNew  + warSupRich)
             {
-                curWarSup = warSupNew;
+                curWarSup = warSupNew + warSupRich;
                 player.parametrs[2].Value = curWarSup;
             }
             //Polit

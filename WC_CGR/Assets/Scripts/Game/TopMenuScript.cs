@@ -44,7 +44,8 @@ namespace Assets.Scripts.Game
         // Use this for initialization
         void Start()
         {
-
+            PlayerPrefs.SetInt("kilkDayRichStab", 0);
+            PlayerPrefs.SetInt("kilkDayRichWar", 0);
         }
 
         // Update is called once per frame
@@ -117,6 +118,7 @@ namespace Assets.Scripts.Game
                     }
                 }
                 player.parametrs[6].Value = player.parametrs[5].Value * valZakArm;
+
 
                 nameCount.text = player.Name;
                 stabTopMenu.text = player.parametrs[1].Value.ToString();

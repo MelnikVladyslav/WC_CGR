@@ -39,6 +39,7 @@ namespace GameLogic.Classes.Game
         public List<Region> regions = new List<Region>();
         public List<Effect> effects = new List<Effect>();
         public Focus currentFocus;
+        public Technology currentTech;
         public int bonusTech = 1;
         public Region capital;
     }

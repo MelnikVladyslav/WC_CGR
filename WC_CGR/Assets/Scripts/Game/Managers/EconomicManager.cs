@@ -38,6 +38,7 @@ namespace Assets.Scripts.Game.Managers
         Button[] buttons = new Button[] { };
 
         public GameObject civilsPanel;
+        public GameObject armyPanel;
         #endregion
 
         // Use this for initialization
@@ -130,6 +131,11 @@ namespace Assets.Scripts.Game.Managers
             civilsPanel.gameObject.SetActive(true);
         }
 
+        public void OpenArmy()
+        {
+            armyPanel.gameObject.SetActive(true);
+        }
+
         public void Build(string name, int idReg)
         {
             for (int i = 0; i < game.civils.Count; i++)
@@ -155,7 +161,9 @@ namespace Assets.Scripts.Game.Managers
                     if (player.parametrs[0].Value >= game.armyBuilds[i].Cost)
                     {
                         player.regions[idReg].armyBuilds.Add(game.armyBuilds[i]);
+                        player.regions[idReg].parametrs[1].Value += 1f;
                         player.parametrs[0].Value -= game.armyBuilds[i].Cost;
+                        armyPanel.gameObject.SetActive(false);
                         isOpen = true;
                         break;
                     }
@@ -168,6 +176,7 @@ namespace Assets.Scripts.Game.Managers
                     if (player.parametrs[0].Value >= game.defendBuilds[i].Cost)
                     {
                         player.regions[idReg].defendBuilds.Add(game.defendBuilds[i]);
+                        player.regions[idReg].parametrs[1].Value += 1f;
                         player.parametrs[0].Value -= game.defendBuilds[i].Cost;
                         isOpen = true;
                         break;
@@ -226,8 +235,13 @@ namespace Assets.Scripts.Game.Managers
                         {
                             button.onClick.AddListener(() => OpenCivil());
                         }
+                        if (button.name == "Army")
+                        {
+                            button.onClick.AddListener(() => OpenArmy());
+                        }
                     }
 
+                    //Civil panel
                     buttons = civilsPanel.GetComponentsInChildren<Button>();
                     int id = i;
                     foreach(Button button in buttons)
@@ -239,6 +253,17 @@ namespace Assets.Scripts.Game.Managers
                         if (button.name == "Inf")
                         {
                             button.onClick.AddListener(() => Build("Інфаструктура", id));
+                        }
+                    }
+
+                    //ArmyPanel
+                    buttons = armyPanel.GetComponentsInChildren<Button>();
+                    int idArm = i;
+                    foreach (Button button in buttons)
+                    {
+                        if (button.name == "ArmyFabr")
+                        {
+                            button.onClick.AddListener(() => Build("Військові заводи", idArm));
                         }
                     }
                 }

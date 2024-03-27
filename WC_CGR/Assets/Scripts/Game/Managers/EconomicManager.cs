@@ -2,6 +2,7 @@
 using GameLogic.Classes.Game;
 using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Standart;
+using GameLogic.Classes.Settings;
 using GameLogic.Functions.SaveLoad;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Assets.Scripts.Game.Managers
 
         Players pl = new Players();
         Country player = new Country();
+        StartGame game;
         bool isOpen = false;
 
         #region Investions
@@ -30,6 +32,14 @@ namespace Assets.Scripts.Game.Managers
         int kilkBigInv = 0;
         #endregion
 
+        #region Builds
+        public GameObject regForBuildPr;
+        public GameObject contentPar;
+        Button[] buttons = new Button[] { };
+
+        public GameObject civilsPanel;
+        #endregion
+
         // Use this for initialization
         void Start()
         {
@@ -40,6 +50,7 @@ namespace Assets.Scripts.Game.Managers
         {
             isOpen = true;
             pl = load.LoadPlayersInfo();
+            game = load.LoadStartInfo();
             player = pl.Player;
         }
 
@@ -113,6 +124,59 @@ namespace Assets.Scripts.Game.Managers
 
         #endregion
 
+        #region BuildsMethods
+        public void OpenCivil()
+        {
+            civilsPanel.gameObject.SetActive(true);
+        }
+
+        public void Build(string name, int idReg)
+        {
+            for (int i = 0; i < game.civils.Count; i++)
+            {
+                if (game.civils[i].Name == name)
+                {
+                    if (player.parametrs[0].Value >= game.civils[i].Cost)
+                    {
+                        player.regions[idReg].builds.Add(game.civils[i]);
+                        player.regions[idReg].parametrs[1].Value += 1f;
+                        
+                        civilsPanel.gameObject.SetActive(false);
+                        player.parametrs[0].Value -= game.civils[i].Cost;
+                        isOpen = true;
+                        break;
+                    }
+                }
+            }
+            for (int i = 0; i < game.armyBuilds.Count; i++)
+            {
+                if (game.armyBuilds[i].Name == name)
+                {
+                    if (player.parametrs[0].Value >= game.armyBuilds[i].Cost)
+                    {
+                        player.regions[idReg].armyBuilds.Add(game.armyBuilds[i]);
+                        player.parametrs[0].Value -= game.armyBuilds[i].Cost;
+                        isOpen = true;
+                        break;
+                    }
+                }
+            }
+            for (int i = 0; i < game.defendBuilds.Count; i++)
+            {
+                if (game.defendBuilds[i].Name == name)
+                {
+                    if (player.parametrs[0].Value >= game.defendBuilds[i].Cost)
+                    {
+                        player.regions[idReg].defendBuilds.Add(game.defendBuilds[i]);
+                        player.parametrs[0].Value -= game.defendBuilds[i].Cost;
+                        isOpen = true;
+                        break;
+                    }
+                }
+            }
+        }
+        #endregion
+
         // Update is called once per frame
         void Update()
         {
@@ -143,9 +207,43 @@ namespace Assets.Scripts.Game.Managers
                 mdInvText.text = kilkMedInv.ToString();
                 bigInvText.text = kilkBigInv.ToString();
 
+                //Builds
+                foreach (Transform child in contentPar.transform)
+                {
+                    Destroy(child.gameObject);
+                }
+                for (int i = 0; i < player.regions.Count; i++)
+                {
+                    GameObject curEff = Instantiate(regForBuildPr, contentPar.transform);
+                    curEff.transform.position = new Vector3(curEff.transform.position.x, curEff.transform.position.y - (2 * i), curEff.transform.position.z);
+                    Text textN = curEff.GetComponentInChildren<Text>();
+                    textN.text = player.regions[i].Name;
+ 
+                    buttons = curEff.GetComponentsInChildren<Button>();
+                    foreach(Button button in buttons)
+                    {
+                        if (button.name == "Civil")
+                        {
+                            button.onClick.AddListener(() => OpenCivil());
+                        }
+                    }
 
-
+                    buttons = civilsPanel.GetComponentsInChildren<Button>();
+                    int id = i;
+                    foreach(Button button in buttons)
+                    {
+                        if (button.name == "CivilFabr")
+                        {
+                            button.onClick.AddListener(() => Build("Цивільні фабрики", id));
+                        }
+                        if (button.name == "Inf")
+                        {
+                            button.onClick.AddListener(() => Build("Інфаструктура", id));
+                        }
+                    }
+                }
                 isOpen = false;
+
                 pl.Player = player;
                 save.SavePlayers(pl);
             }

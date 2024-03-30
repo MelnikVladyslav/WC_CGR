@@ -39,6 +39,7 @@ namespace Assets.Scripts.Game.Managers
 
         public GameObject civilsPanel;
         public GameObject armyPanel;
+        public GameObject defendPanel;
         #endregion
 
         // Use this for initialization
@@ -136,6 +137,11 @@ namespace Assets.Scripts.Game.Managers
             armyPanel.gameObject.SetActive(true);
         }
 
+        public void OpenDefend()
+        {
+            defendPanel.gameObject.SetActive(true);
+        }
+
         public void Build(string name, int idReg)
         {
             for (int i = 0; i < game.civils.Count; i++)
@@ -178,6 +184,7 @@ namespace Assets.Scripts.Game.Managers
                         player.regions[idReg].defendBuilds.Add(game.defendBuilds[i]);
                         player.regions[idReg].parametrs[1].Value += 1f;
                         player.parametrs[0].Value -= game.defendBuilds[i].Cost;
+                        defendPanel.gameObject.SetActive(false);
                         isOpen = true;
                         break;
                     }
@@ -239,6 +246,10 @@ namespace Assets.Scripts.Game.Managers
                         {
                             button.onClick.AddListener(() => OpenArmy());
                         }
+                        if (button.name == "Defend")
+                        {
+                            button.onClick.AddListener(() => OpenDefend());
+                        }
                     }
 
                     //Civil panel
@@ -264,6 +275,21 @@ namespace Assets.Scripts.Game.Managers
                         if (button.name == "ArmyFabr")
                         {
                             button.onClick.AddListener(() => Build("Військові заводи", idArm));
+                        }
+                    }
+
+                    //DefendPanel
+                    buttons = defendPanel.GetComponentsInChildren<Button>();
+                    int idDef = i;
+                    foreach (Button button in buttons)
+                    {
+                        if (button.name == "Bunker")
+                        {
+                            button.onClick.AddListener(() => Build("Укріплення", idDef));
+                        }
+                        if (button.name == "PPO")
+                        {
+                            button.onClick.AddListener(() => Build("ППО", idDef));
                         }
                     }
                 }

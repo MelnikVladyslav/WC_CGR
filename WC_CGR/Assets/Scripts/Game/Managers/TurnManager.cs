@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Class.Settings;
+﻿using Assets.Scripts.Class.Game;
+using Assets.Scripts.Class.Settings;
 using GameLogic.Classes.Game;
 using GameLogic.Classes.Game.Standart;
 using GameLogic.Classes.Game.Technolog;
@@ -320,6 +321,36 @@ namespace Assets.Scripts.Game
                     for (int c = 0; c < player.technologies.Count; c++)
                     {
                         player.technologies[c].KilkDay -= 5;
+                    }
+                }
+            }
+
+            //Production
+            for (int i = 0; i < player.regions.Count; i++)
+            {
+                if (player.regions[i].currentWeapProd != null)
+                {
+                    bool isProd = false;
+
+                    for (int j = 0; j < player.weaponSklad.Count; j++)
+                    {
+                        if (player.weaponSklad[j].weapon.Name == player.regions[i].currentWeapProd.Name)
+                        {
+                            isProd = true;
+                            player.weaponSklad[j].Kilkisty += Mathf.RoundToInt(player.weaponSklad[j].weapon.ProductionCost * player.regions[i].armyBuilds.Count / 2.7f);
+                            break;
+                        }
+                    }
+
+                    if (!isProd)
+                    {
+                        Sklad tempSkladWeap = new Sklad()
+                        {
+                            weapon = player.regions[i].currentWeapProd,
+                            Kilkisty = Mathf.RoundToInt(player.regions[i].currentWeapProd.ProductionCost * player.regions[i].armyBuilds.Count / 2.7f)
+                        };
+
+                        player.weaponSklad.Add(tempSkladWeap);
                     }
                 }
             }

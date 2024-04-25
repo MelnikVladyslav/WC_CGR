@@ -1,4 +1,5 @@
-﻿using GameLogic.Classes.Game.Army.Shablons;
+﻿using Assets.Scripts.Class.Game;
+using GameLogic.Classes.Game.Army.Shablons;
 using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Economic.Builds;
@@ -41,6 +42,6 @@ namespace GameLogic.Classes.Game
         public Focus currentFocus;
         public Technology currentTech;
         public int bonusTech = 1;
-        public Region capital;
+        public List<Sklad> weaponSklad = new List<Sklad>();
     }
 }

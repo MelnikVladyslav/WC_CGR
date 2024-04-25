@@ -1,4 +1,5 @@
 ﻿using GameLogic.Classes.Game.Army.Shablons;
+using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
 using System;
@@ -22,5 +23,6 @@ namespace GameLogic.Classes.Game
         public List<DefendBuild> defendBuilds = new List<DefendBuild>();
         public List<Divisions> divisions = new List<Divisions>();
         public List<Parametr> parametrs = new List<Parametr>();
+        public Weapon currentWeapProd;
     }
 }

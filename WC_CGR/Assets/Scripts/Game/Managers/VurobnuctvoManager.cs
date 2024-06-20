@@ -44,10 +44,6 @@ namespace Assets.Scripts.Game.Managers
             pl = load.LoadPlayersInfo();
             player = pl.Player;
             weaponsOpen = player.weapons;
-            foreach (var item in player.aviations)
-            {
-                weaponsOpen.Add(item);
-            }
         }
 
         public void ChangedValues(int i)

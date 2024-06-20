@@ -1,4 +1,5 @@
-﻿using GameLogic.Classes.Game.Army.Shablons;
+﻿using Assets.Scripts.Class.Game;
+using GameLogic.Classes.Game.Army.Shablons;
 using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
@@ -24,5 +25,6 @@ namespace GameLogic.Classes.Game
         public List<Divisions> divisions = new List<Divisions>();
         public List<Parametr> parametrs = new List<Parametr>();
         public Weapon currentWeapProd;
+        public Recruit currentRecruitDiv;
     }
 }

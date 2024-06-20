@@ -18,13 +18,13 @@ namespace GameLogic.Initilization
                 {
                     Id = 0,
                     Name = "Цивільні фабрики",
-                    Cost = 1000
+                    Cost = 0.01f
                 },
                 new Build()
                 {
                     Id = 1,
                     Name = "Інфаструктура",
-                    Cost = 100
+                    Cost = 0.001f
                 }
             };
             return builds;
@@ -38,7 +38,7 @@ namespace GameLogic.Initilization
                 {
                     Id = 0,
                     Name = "Військові заводи",
-                    Cost = 1200
+                    Cost = 0.01f
                 }
             };
             return armyBuilds;
@@ -52,7 +52,7 @@ namespace GameLogic.Initilization
                 {
                     Id = 0,
                     Name = "Укріплення",
-                    Cost = 500,
+                    Cost = 0.001f,
                     Attack = 5,
                     Defend = 5
                 },
@@ -60,7 +60,7 @@ namespace GameLogic.Initilization
                 {
                     Id = 1,
                     Name = "ППО",
-                    Cost = 500,
+                    Cost = 0.001f,
                     Attack = 5,
                     Defend = 5
                 }

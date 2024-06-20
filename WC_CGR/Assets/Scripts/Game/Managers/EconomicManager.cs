@@ -148,13 +148,13 @@ namespace Assets.Scripts.Game.Managers
             {
                 if (game.civils[i].Name == name)
                 {
-                    if (player.parametrs[0].Value >= game.civils[i].Cost)
+                    if (player.parametrs[3].Value >= game.civils[i].Cost)
                     {
                         player.regions[idReg].builds.Add(game.civils[i]);
                         player.regions[idReg].parametrs[1].Value += 1f;
                         
                         civilsPanel.gameObject.SetActive(false);
-                        player.parametrs[0].Value -= game.civils[i].Cost;
+                        player.parametrs[0].Value -= 10;
                         isOpen = true;
                         break;
                     }
@@ -164,11 +164,11 @@ namespace Assets.Scripts.Game.Managers
             {
                 if (game.armyBuilds[i].Name == name)
                 {
-                    if (player.parametrs[0].Value >= game.armyBuilds[i].Cost)
+                    if (player.parametrs[3].Value >= game.armyBuilds[i].Cost)
                     {
                         player.regions[idReg].armyBuilds.Add(game.armyBuilds[i]);
                         player.regions[idReg].parametrs[1].Value += 1f;
-                        player.parametrs[0].Value -= game.armyBuilds[i].Cost;
+                        player.parametrs[0].Value -= 10;
                         armyPanel.gameObject.SetActive(false);
                         isOpen = true;
                         break;
@@ -179,11 +179,11 @@ namespace Assets.Scripts.Game.Managers
             {
                 if (game.defendBuilds[i].Name == name)
                 {
-                    if (player.parametrs[0].Value >= game.defendBuilds[i].Cost)
+                    if (player.parametrs[3].Value >= game.defendBuilds[i].Cost)
                     {
                         player.regions[idReg].defendBuilds.Add(game.defendBuilds[i]);
                         player.regions[idReg].parametrs[1].Value += 1f;
-                        player.parametrs[0].Value -= game.defendBuilds[i].Cost;
+                        player.parametrs[0].Value -= 10;
                         defendPanel.gameObject.SetActive(false);
                         isOpen = true;
                         break;

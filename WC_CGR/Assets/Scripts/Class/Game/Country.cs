@@ -33,7 +33,6 @@ namespace GameLogic.Classes.Game
         public List<ArmyBuild> armyBuildsOpen = new List<ArmyBuild>();
         public List<DefendBuild> defendBuildsOpen = new List<DefendBuild>();
         public List<Weapon> weapons = new List<Weapon>();
-        public List<Weapon> aviations = new List<Weapon>();
         public List<Pidrozdil> pidrozdils = new List<Pidrozdil>();
         public List<Rotes> shablonRotes = new List<Rotes>();
         public List<Divisions> shablonDivisions = new List<Divisions>();

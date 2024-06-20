@@ -12,8 +12,7 @@ namespace GameLogic.Classes.Game.Army.Weaponry
         Infantry = 0,
         Artillery,
         Technics,
-        Aviations,
-        Flot
+        Aviations
     }
 
     [Serializable]

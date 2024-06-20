@@ -56,7 +56,21 @@ namespace GameLogic.Initilization
                     Description = "Піхотне озброєння 2000",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[1]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -88,7 +102,21 @@ namespace GameLogic.Initilization
                     Description = "Піхотне озброєння 2010",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[2]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -120,7 +148,21 @@ namespace GameLogic.Initilization
                     Description = "Піхотне озброєння 2020",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[3]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -186,7 +228,21 @@ namespace GameLogic.Initilization
                     Description = "Польова артилерія 2000",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[5]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -218,7 +274,21 @@ namespace GameLogic.Initilization
                     Description = "Польова артилерія 2010",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[6]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -250,7 +320,21 @@ namespace GameLogic.Initilization
                     Description = "Польова артилерія 2020",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[7]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -316,7 +400,21 @@ namespace GameLogic.Initilization
                     Description = "САУ 2000",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[9]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -348,7 +446,21 @@ namespace GameLogic.Initilization
                     Description = "САУ 2010",
                     KilkDay = 120,
                     Type = TypeTech.Army,
-                    weapon = weapons[10]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -380,7 +492,21 @@ namespace GameLogic.Initilization
                     Description = "САУ 2020",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[11]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -446,7 +572,21 @@ namespace GameLogic.Initilization
                     Description = "ППО 2000",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[13]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[13].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -478,7 +618,21 @@ namespace GameLogic.Initilization
                     Description = "ППО 2010",
                     KilkDay = 120,
                     Type = TypeTech.Army,
-                    weapon = weapons[14]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[13].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -510,7 +664,21 @@ namespace GameLogic.Initilization
                     Description = "ППО 2020",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[15]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[13].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -576,7 +744,21 @@ namespace GameLogic.Initilization
                     Description = "РСЗВ 2000",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[17]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -608,7 +790,21 @@ namespace GameLogic.Initilization
                     Description = "РСЗВ 2010",
                     KilkDay = 120,
                     Type = TypeTech.Army,
-                    weapon = weapons[18]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -640,7 +836,21 @@ namespace GameLogic.Initilization
                     Description = "РСЗВ 2020",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[19]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[11].Name,
+                            Value = 5
+                        },
+                        new Parametr()
+                        {
+                            Id = 1,
+                            Name = parametrs[12].Name,
+                            Value = 7
+                        }
+                    }
                 },
                 new Technology()
                 {
@@ -700,7 +910,15 @@ namespace GameLogic.Initilization
                     Description = "БМП 2000",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[21]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -732,7 +950,15 @@ namespace GameLogic.Initilization
                     Description = "БМП 2010",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[22]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -764,7 +990,15 @@ namespace GameLogic.Initilization
                     Description = "БМП 2020",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[23]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -824,7 +1058,15 @@ namespace GameLogic.Initilization
                     Description = "БТР 2000",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[25]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -856,7 +1098,15 @@ namespace GameLogic.Initilization
                     Description = "БТР 2010",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[26]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -888,7 +1138,15 @@ namespace GameLogic.Initilization
                     Description = "БТР 2020",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[27]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -948,7 +1206,15 @@ namespace GameLogic.Initilization
                     Description = "Танки 2000",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[29]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -980,7 +1246,15 @@ namespace GameLogic.Initilization
                     Description = "Танки 2010",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[30]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -1012,7 +1286,15 @@ namespace GameLogic.Initilization
                     Description = "Танки 2020",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[31]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -1072,7 +1354,15 @@ namespace GameLogic.Initilization
                     Description = "Винищувачі 2000",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[33]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -1098,7 +1388,15 @@ namespace GameLogic.Initilization
                     Description = "Винищувачі 2010",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[34]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -1124,7 +1422,15 @@ namespace GameLogic.Initilization
                     Description = "Винищувачі 2020",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[35]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -1178,7 +1484,15 @@ namespace GameLogic.Initilization
                     Description = "Стратегічні бомбардувальники 2000",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[37]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -1204,7 +1518,15 @@ namespace GameLogic.Initilization
                     Description = "Стратегічні бомбардувальники 2010",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[38]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {
@@ -1230,7 +1552,15 @@ namespace GameLogic.Initilization
                     Description = "Стратегічні бомбардувальники 2020",
                     Type = TypeTech.Army,
                     KilkDay = 120,
-                    weapon = weapons[39]
+                    parametrs = new List<Parametr>()
+                    {
+                        new Parametr()
+                        {
+                            Id = 0,
+                            Name = parametrs[19].Name,
+                            Value = 5
+                        },
+                    }
                 },
                 new Technology()
                 {

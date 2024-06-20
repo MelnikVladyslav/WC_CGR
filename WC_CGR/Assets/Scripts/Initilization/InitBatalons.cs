@@ -413,7 +413,7 @@ namespace GameLogic.Initilization
                 },
                 new Pidrozdil()
                 {
-                    Id = 4,
+                    Id = 5,
                     Name = "Механізована піхота",
                     weapons = new List<WeaponRota>()
                     {
@@ -494,7 +494,7 @@ namespace GameLogic.Initilization
                 },
                 new Pidrozdil()
                 {
-                    Id = 4,
+                    Id = 6,
                     Name = "Броньована піхота",
                     weapons = new List<WeaponRota>()
                     {
@@ -575,8 +575,8 @@ namespace GameLogic.Initilization
                 },
                 new Pidrozdil()
                 {
-                    Id = 4,
-                    Name = "Танклва рота",
+                    Id = 7,
+                    Name = "Танковий рій",
                     weapons = new List<WeaponRota>()
                     {
                         new WeaponRota()

@@ -3839,7 +3839,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 39.62, y: 0}
+  m_AnchoredPosition: {x: 39.619995, y: 0}
   m_SizeDelta: {x: 79.23, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216017405
@@ -33435,6 +33435,8 @@ MonoBehaviour:
   txtNameRota: {fileID: 1177731315}
   createRota: {fileID: 381158135}
   txtInfoRota: {fileID: 1125267002}
+  txtListViddils: {fileID: 2090351883}
+  txtListRotas: {fileID: 1721572435}
   txtViddilsName: {fileID: 2090351883}
   addVid: {fileID: 1291953433}
   panelViddls: {fileID: 873553651}

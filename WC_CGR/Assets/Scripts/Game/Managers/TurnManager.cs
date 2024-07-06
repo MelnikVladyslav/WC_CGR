@@ -355,6 +355,21 @@ namespace Assets.Scripts.Game
                 }
             }
 
+            //Recriut
+            for (int i = 0; i < player.regions.Count; i++)
+            {
+                if (player.regions[i].currentRecruitDiv.shablonRecruit.Name != "")
+                {
+                    player.regions[i].currentRecruitDiv.time -= kilkDayInTurn;
+
+                    if (player.regions[i].currentRecruitDiv.time <= 0)
+                    {
+                        player.regions[i].divisions.Add(player.regions[i].currentRecruitDiv.shablonRecruit);
+                        player.regions[i].currentRecruitDiv = new Recruit();
+                    }
+                }
+            }
+
             pl.Player = player;
             save.SavePlayers(pl);
 

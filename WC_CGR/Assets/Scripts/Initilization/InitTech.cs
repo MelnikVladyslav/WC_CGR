@@ -196,7 +196,7 @@ namespace GameLogic.Initilization
                     Description = "Польова артилерія 1990",
                     IsTech = true,
                     Type = TypeTech.Army,
-                    weapon = weapons[4]
+                    weapon = weapons[1]
                 },
                 new Technology()
                 {
@@ -368,7 +368,7 @@ namespace GameLogic.Initilization
                     Description = "САУ 1990",
                     IsTech = true,
                     Type = TypeTech.Army,
-                    weapon = weapons[8]
+                    weapon = weapons[2]
                 },
                 new Technology()
                 {
@@ -540,7 +540,7 @@ namespace GameLogic.Initilization
                     Description = "ППО 1990",
                     IsTech = true,
                     Type = TypeTech.Army,
-                    weapon = weapons[12]
+                    weapon = weapons[3]
                 },
                 new Technology()
                 {
@@ -712,7 +712,7 @@ namespace GameLogic.Initilization
                     Description = "РСЗВ 1990",
                     IsTech = true,
                     Type = TypeTech.Army,
-                    weapon = weapons[16]
+                    weapon = weapons[4]
                 },
                 new Technology()
                 {
@@ -884,7 +884,7 @@ namespace GameLogic.Initilization
                     Description = "БМП 1990",
                     Type = TypeTech.Army,
                     IsTech = true,
-                    weapon = weapons[20]
+                    weapon = weapons[5]
                 },
                 new Technology()
                 {
@@ -1032,7 +1032,7 @@ namespace GameLogic.Initilization
                     Description = "БТР 1990",
                     Type = TypeTech.Army,
                     IsTech = true,
-                    weapon = weapons[24]
+                    weapon = weapons[6]
                 },
                 new Technology()
                 {
@@ -1180,7 +1180,7 @@ namespace GameLogic.Initilization
                     Description = "Танки 1990",
                     Type = TypeTech.Army,
                     IsTech = true,
-                    weapon = weapons[28]
+                    weapon = weapons[7]
                 },
                 new Technology()
                 {
@@ -1328,7 +1328,7 @@ namespace GameLogic.Initilization
                     Description = "Винищувачі 1990",
                     Type = TypeTech.Army,
                     IsTech = true,
-                    weapon = weapons[32]
+                    weapon = weapons[8]
                 },
                 new Technology()
                 {
@@ -1458,7 +1458,7 @@ namespace GameLogic.Initilization
                     Description = "Стратегічні бомбардувальники 1990",
                     Type = TypeTech.Army,
                     IsTech = true,
-                    weapon = weapons[36]
+                    weapon = weapons[9]
                 },
                 new Technology()
                 {

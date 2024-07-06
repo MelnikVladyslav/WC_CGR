@@ -35,6 +35,8 @@ namespace Assets.Scripts.Game.Managers
         public Text txtNameRota;
         public GameObject createRota;
         public Text txtInfoRota;
+        public Text txtListViddils;
+        public Text txtListRotas;
 
         Text txtVidName;
         Button btnEnterVid;
@@ -106,6 +108,11 @@ namespace Assets.Scripts.Game.Managers
         {
             if (isOpen)
             {
+                tempRota = new Rotes();
+                tempDiv = new Divisions();
+                txtListRotas.text = " ";
+                txtListViddils.text = " ";
+
                 #region Viddils
 
                 foreach(Transform child in contentVid.transform)
@@ -140,8 +147,8 @@ namespace Assets.Scripts.Game.Managers
 
                     int id = i;
 
-                    txtNameDiv = curRot.GetComponentInChildren<Text>();
-                    txtNameDiv.text = player.shablonRotes[i].Name;
+                    txtRotName = curRot.GetComponentInChildren<Text>();
+                    txtRotName.text = player.shablonRotes[i].Name;
                     btnEnterRot = curRot.GetComponentInChildren<Button>();
                     btnEnterRot.onClick.AddListener(() => EnterRota(id));
                 }
@@ -343,7 +350,8 @@ namespace Assets.Scripts.Game.Managers
                 else
                 {
                     // Якщо зброї немає у складі, додаємо нову
-                    if (weaponDictionary.TryGetValue(item.Key, out Weapon foundWeapon))
+                    var foundWeapon = weaponDictionary.Values.FirstOrDefault(w => w.Name.Contains(item.Key, StringComparison.OrdinalIgnoreCase));
+                    if (foundWeapon != null)
                     {
                         player.weaponSklad.Add(new Sklad()
                         {

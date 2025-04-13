@@ -8,14 +8,7 @@ namespace Assets.Scripts.Menu.Settings.Sounds
     {
         public void getVolume(Slider sl)
         {
-            if (sl.value == 0)
-            {
-                PlayerPrefs.SetFloat("volume", 0.5f);
-            }
-            else
-            {
-                PlayerPrefs.SetFloat("volume", sl.value);
-            }
+            PlayerPrefs.SetFloat("volume", sl.value);
         }
     }
 }

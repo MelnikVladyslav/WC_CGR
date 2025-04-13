@@ -1,4 +1,6 @@
-﻿using GameLogic.Classes.Game.Army.Weaponry;
+﻿using Assets.Scripts.Class.Game.Technolog;
+using Assets.Scripts.Class.Game.Uryad.Foci;
+using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Economic.Builds;
 using GameLogic.Classes.Game.Standart;
 using System;
@@ -27,7 +29,7 @@ namespace GameLogic.Classes.Game.Technolog
         public bool IsTech = false;
         public int KilkDay;
         public int KilkDayRemained;
-        public Technology prevTech;
+        public PrevTech prevTech = new PrevTech();
         public Weapon weapon;
         public List<Parametr> parametrs = new List<Parametr>();
     }

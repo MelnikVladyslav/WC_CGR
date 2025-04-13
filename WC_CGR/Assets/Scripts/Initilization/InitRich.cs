@@ -17,51 +17,6 @@ namespace GameLogic.Initilization
                 new Richenya()
                 {
                     Id = 0,
-                    Name = "Пропагування рівності",
-                    Description = "Пропагування рівності, демократичних ціностей",
-                    parametrs = new List<Parametr>()
-                    {
-                        new Parametr()
-                        {
-                            Id = 0,
-                            Name = "Підтримка прозахідних",
-                            Value = 0.05f
-                        }
-                    }
-                },
-                new Richenya()
-                {
-                    Id = 1,
-                    Name = "Пропагування традицій",
-                    Description = "Пропагування традицій нації і власну ідентичність",
-                    parametrs = new List<Parametr>()
-                    {
-                        new Parametr()
-                        {
-                            Id = 0,
-                            Name = "Підтримка націоналізму",
-                            Value = 0.05f
-                        }
-                    }
-                },
-                new Richenya()
-                {
-                    Id = 2,
-                    Name = "Пропагування дикості",
-                    Description = "Пропагування ідей дикої татарсько-монгольської орди",
-                    parametrs = new List<Parametr>()
-                    {
-                        new Parametr()
-                        {
-                            Id = 0,
-                            Name = "Підтримка проросійських",
-                            Value = 0.05f
-                        }
-                    }
-                },
-                new Richenya()
-                {
-                    Id = 3,
                     Name = "Пропагування миру",
                     Description = "Пропагування миру і стабільності",
                     parametrs = new List<Parametr>()
@@ -76,7 +31,7 @@ namespace GameLogic.Initilization
                 },
                 new Richenya()
                 {
-                    Id = 4,
+                    Id = 1,
                     Name = "Пропагування війни",
                     Description = "Пропагування ідей захисту своєї держави",
                     parametrs = new List<Parametr>()

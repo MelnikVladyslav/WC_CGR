@@ -1,4 +1,5 @@
-﻿using GameLogic.Classes.Game.Army.Shablons;
+﻿using Assets.Scripts.Class.Game;
+using GameLogic.Classes.Game.Army.Shablons;
 using GameLogic.Classes.Game.Army.Weaponry;
 using GameLogic.Classes.Game.Economic;
 using GameLogic.Classes.Game.Economic.Builds;
@@ -32,14 +33,14 @@ namespace GameLogic.Classes.Game
         public List<ArmyBuild> armyBuildsOpen = new List<ArmyBuild>();
         public List<DefendBuild> defendBuildsOpen = new List<DefendBuild>();
         public List<Weapon> weapons = new List<Weapon>();
-        public List<Weapon> aviations = new List<Weapon>();
         public List<Pidrozdil> pidrozdils = new List<Pidrozdil>();
         public List<Rotes> shablonRotes = new List<Rotes>();
         public List<Divisions> shablonDivisions = new List<Divisions>();
         public List<Region> regions = new List<Region>();
         public List<Effect> effects = new List<Effect>();
         public Focus currentFocus;
+        public Technology currentTech;
         public int bonusTech = 1;
-        public Region capital;
+        public List<Sklad> weaponSklad = new List<Sklad>();
     }
 }

@@ -1,6 +1,7 @@
 using Assets.Scripts.Class.Settings;
 using GameLogic.Classes.Game;
 using GameLogic.Classes.Game.Standart;
+using GameLogic.Classes.Settings;
 using GameLogic.Functions.SaveLoad;
 using System.Collections;
 using System.Collections.Generic;
@@ -90,6 +91,11 @@ public class Cell : MonoBehaviour
         controls = GameObject.Find("Canvas/Game/bottomPanel/control");
     }
 
+    private void Update()
+    {
+        
+    }
+
     public static string GenerateProvinceName()
     {
         Random random = new Random();
@@ -123,6 +129,13 @@ public class Cell : MonoBehaviour
     {
         bottomPanel.SetActive(true);
         pl = load.LoadPlayersInfo();
+        for (int i = 0; i < pl.Player.regions.Count; i++)
+        {
+            if (pl.Player.regions[i].Id == currentRegion.Id)
+            {
+                currentRegion = pl.Player.regions[i];
+            }
+        }
         name.GetComponent<Text>().text = currentRegion.Name;
         nameCity.GetComponent<Text>().text = currentRegion.nameCity;
         parametrs.GetComponent<Text>().text = " ";

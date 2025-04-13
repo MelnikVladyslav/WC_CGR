@@ -44,7 +44,8 @@ namespace Assets.Scripts.Game
         // Use this for initialization
         void Start()
         {
-
+            PlayerPrefs.SetInt("kilkDayRichStab", 0);
+            PlayerPrefs.SetInt("kilkDayRichWar", 0);
         }
 
         // Update is called once per frame
@@ -108,7 +109,16 @@ namespace Assets.Scripts.Game
                     curVvpBonus = vvpB;
                 }
                 player.parametrs[3].Value = ((inv + player.bonusTech + curVvpBonus) * player.parametrs[1].Value) / (player.parametrs[5].Value + player.parametrs[4].Value);
-                player.parametrs[6].Value = player.parametrs[5].Value * player.zakonus[1].parametrs[2].Value;
+                float valZakArm = 0;
+                for (int i = 0; i < player.zakonus.Count; i++)
+                {
+                    if (player.zakonus[i].Type == GameLogic.Classes.Game.Uryad.Zakonu.TypeZak.Prizov)
+                    {
+                        valZakArm += player.zakonus[i].parametrs[2].Value;
+                    }
+                }
+                player.parametrs[6].Value = player.parametrs[5].Value * valZakArm;
+
 
                 nameCount.text = player.Name;
                 stabTopMenu.text = player.parametrs[1].Value.ToString();

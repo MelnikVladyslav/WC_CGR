@@ -1,5 +1,8 @@
-﻿using Assets.Scripts.Class.Settings;
+﻿using Assets.Scripts.Class.Game;
+using Assets.Scripts.Class.Settings;
 using GameLogic.Classes.Game;
+using GameLogic.Classes.Game.Standart;
+using GameLogic.Classes.Game.Technolog;
 using GameLogic.Classes.Game.Uryad.Foci;
 using GameLogic.Functions.SaveLoad;
 using System;
@@ -25,6 +28,9 @@ namespace Assets.Scripts.Game
         Country player = new Country();
 
         public Text textDate;
+
+        float stabaRich = 0;
+        float warSupRich = 0;
 
         // Use this for initialization
         void Start()
@@ -138,15 +144,31 @@ namespace Assets.Scripts.Game
             PlayerPrefs.SetFloat("vvpBonus", vvpBonus);
             vvpBonus = 0;
 
+            //Richenyas
+            int kilkDRS = PlayerPrefs.GetInt("kilkDayRichStab");
+            int kilkDRW = PlayerPrefs.GetInt("kilkDayRichWar");
+            if (kilkDRS != 0)
+            {
+                stabaRich += (0.05f * ((200 - kilkDRS) / kilkDayInTurn));
+                kilkDRS -= 10;
+                PlayerPrefs.SetInt("kilkDayRichStab", kilkDRS);
+            }
+            if (kilkDRW != 0)
+            {
+                warSupRich += (0.05f * ((200 - kilkDRW) / kilkDayInTurn));
+                kilkDRW -= 10;
+                PlayerPrefs.SetInt("kilkDayRichWar", kilkDRW);
+            }
+
             //Final values parametres
             //Staba
             if (stabaNew > 100)
             {
                 stabaNew = 100;
             }
-            if(curStab != stabaNew)
+            if(curStab != stabaNew + stabaRich)
             {
-                curStab = stabaNew;
+                curStab = stabaNew + stabaRich;
                 player.parametrs[1].Value = curStab;
             }
             //War sup
@@ -154,9 +176,9 @@ namespace Assets.Scripts.Game
             {
                 warSupNew = 100;
             }
-            if (curWarSup != warSupNew)
+            if (curWarSup != warSupNew  + warSupRich)
             {
-                curWarSup = warSupNew;
+                curWarSup = warSupNew + warSupRich;
                 player.parametrs[2].Value = curWarSup;
             }
             //Polit
@@ -235,6 +257,115 @@ namespace Assets.Scripts.Game
                     if (player.treeFocuses.foci[23].isFoc == true)
                     {
                         player.treeFocuses.foci[21].isDost = false;
+                    }
+                }
+            }
+
+            //Technology
+            if (player.currentTech.Name != "")
+            {
+                if (player.currentTech.KilkDay != player.currentTech.KilkDayRemained)
+                {
+                    player.currentTech.KilkDayRemained += kilkDayInTurn;
+                }
+                if (player.currentTech.KilkDay <= player.currentTech.KilkDayRemained)
+                {
+                    for (int i = 0; i < player.technologies.Count; i++)
+                    {
+                        if (player.technologies[i].Name == player.currentTech.Name)
+                        {
+                            player.technologies[i].IsTech = true;
+                            for (int j = 0; j < player.technologies.Count; j++)
+                            {
+                                if (player.technologies[j].prevTech.prevTech.Name == player.technologies[i].Name)
+                                {
+                                    player.technologies[j].prevTech.prevTech.IsTech = true;
+                                }
+                            }
+
+                            for (int a = 0; a < player.weapons.Count; a++)
+                            {
+                                for (int c = 0; c < player.weapons[a].parametrs.Count; c++)
+                                {
+                                    for (int b = 0; b < player.currentTech.parametrs.Count; b++)
+                                    {
+                                        if (player.weapons[a].parametrs[c].Name == player.currentTech.parametrs[b].Name)
+                                        {
+                                            player.weapons[a].parametrs[c].Value += player.currentTech.parametrs[b].Value;
+                                        }
+                                    }
+                                }
+                            }
+
+                            for (int a = 0; a < player.parametrs.Count; a++)
+                            {
+                                for (int b = 0; b < player.currentTech.parametrs.Count; b++)
+                                {
+                                    if (player.parametrs[a].Name == player.currentTech.parametrs[b].Name)
+                                    {
+                                        player.parametrs[a].Value += player.currentTech.parametrs[b].Value;
+                                    }
+                                    if (player.currentTech.weapon.Name != "")
+                                    {
+                                        player.weapons.Add(player.currentTech.weapon);
+                                    }
+                                }
+                            }
+
+                            player.currentTech = new Technology();
+                        }
+                    }
+                }
+                if (player.currentTech.Type == TypeTech.Tech)
+                {
+                    for (int c = 0; c < player.technologies.Count; c++)
+                    {
+                        player.technologies[c].KilkDay -= 5;
+                    }
+                }
+            }
+
+            //Production
+            for (int i = 0; i < player.regions.Count; i++)
+            {
+                if (player.regions[i].currentWeapProd != null)
+                {
+                    bool isProd = false;
+
+                    for (int j = 0; j < player.weaponSklad.Count; j++)
+                    {
+                        if (player.weaponSklad[j].weapon.Name == player.regions[i].currentWeapProd.Name)
+                        {
+                            isProd = true;
+                            player.weaponSklad[j].Kilkisty += Mathf.RoundToInt(player.weaponSklad[j].weapon.ProductionCost * player.regions[i].armyBuilds.Count / 2.7f);
+                            break;
+                        }
+                    }
+
+                    if (!isProd)
+                    {
+                        Sklad tempSkladWeap = new Sklad()
+                        {
+                            weapon = player.regions[i].currentWeapProd,
+                            Kilkisty = Mathf.RoundToInt(player.regions[i].currentWeapProd.ProductionCost * player.regions[i].armyBuilds.Count / 2.7f)
+                        };
+
+                        player.weaponSklad.Add(tempSkladWeap);
+                    }
+                }
+            }
+
+            //Recriut
+            for (int i = 0; i < player.regions.Count; i++)
+            {
+                if (player.regions[i].currentRecruitDiv.shablonRecruit.Name != "")
+                {
+                    player.regions[i].currentRecruitDiv.time -= kilkDayInTurn;
+
+                    if (player.regions[i].currentRecruitDiv.time <= 0)
+                    {
+                        player.regions[i].divisions.Add(player.regions[i].currentRecruitDiv.shablonRecruit);
+                        player.regions[i].currentRecruitDiv = new Recruit();
                     }
                 }
             }

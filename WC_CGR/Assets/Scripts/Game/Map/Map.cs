@@ -120,7 +120,6 @@ namespace Assets.Scripts.Game.Map
                             }
                         };
             cellsCap[0].currentRegion.parametrs[1].Value = cellsCap[0].currentRegion.builds.Count + cellsCap[0].currentRegion.armyBuilds.Count + cellsCap[0].currentRegion.defendBuilds.Count;
-            players.Player.capital = cellsCap[0].currentRegion;
             players.Player.regions.Add(cellsCap[0].currentRegion);
             mainCamera.transform.position = new Vector3(cellsCap[0].currentRegion.prefab.transform.position.x, cellsCap[0].currentRegion.prefab.transform.position.y, mainCamera.transform.position.z);
             for (int i = 0; i < kilkPl - 1; i++)
@@ -169,7 +168,6 @@ namespace Assets.Scripts.Game.Map
                             }
                         };
                 cellsCap[i + 1].currentRegion.parametrs[1].Value = cellsCap[i + 1].currentRegion.builds.Count + cellsCap[i + 1].currentRegion.armyBuilds.Count + cellsCap[i + 1].currentRegion.defendBuilds.Count;
-                players.bots[i].capital = cellsCap[i + 1].currentRegion;
                 players.bots[i].regions.Add(cellsCap[i + 1].currentRegion);
             }
             save.SavePlayers(players);
